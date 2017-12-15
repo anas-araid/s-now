@@ -19,19 +19,27 @@
       <!-- w3-hide-large classe che nasconde un elemento sui dispositivi grandi -->
       <button class="stile-small-round-button w3-hide-large" onclick="chiudiMenu()">X</button>
       <div class="w3-container">
-        <h4 style="text-align:center"><b>s-<i>now</i></b></h4>
+        <h3 style="text-align:center"><b>s-<i>now</i></b></h3>
       </div>
       <div class="w3-bar-block">
         <a href="#cose"
            onclick="chiudiMenu()"
-           class="w3-bar-item w3-button w3-white w3-text-indigo w3-hover-indigo w3-hover-text-white w3-round-xxlarge">
-           <i>Cos'è</i>
+           class="w3-bar-item w3-button w3-white w3-text-indigo w3-hover-indigo w3-hover-text-white w3-round-xxlarge"
+           style="border: 1px solid white;"> <!-- Se sposto lo style nel file css, non funziona -->
+           <i>Cos'è?</i>
          </a>
         <a href="#situazione"
            onclick="chiudiMenu()"
-           class="w3-bar-item w3-button w3-white w3-text-indigo w3-hover-indigo w3-hover-text-white w3-round-xxlarge">
+           class="w3-bar-item w3-button w3-white w3-text-indigo w3-hover-indigo w3-hover-text-white w3-round-xxlarge"
+           style="border: 1px solid white;">
            <i>Situazione</i>
          </a>
+         <a href="#cosa-fare"
+            onclick="chiudiMenu()"
+            class="w3-bar-item w3-button w3-white w3-text-indigo w3-hover-indigo w3-hover-text-white w3-round-xxlarge"
+            style="border: 1px solid white;">
+            <i>Cosa fare?</i>
+          </a>
       </div>
     </nav>
 
@@ -64,16 +72,45 @@
 
       <!-- Cos'è -->
      <div class="w3-container" id="cose" style="margin-top:250px">
-       <h1 class="w3-xxxlarge w3-text-indigo"><b><i>Cos'è?</i></b></h1>
-       <hr style="width:100px;border:5px solid #3f51b5" class="w3-round">
-       <p></p>
+       <div class="w3-card-4 w3-panel w3-round-xlarge" style="padding:50px;">
+         <h1 class="w3-xxxlarge w3-text-indigo"><b><i>Cos'è?</i></b></h1>
+         <hr style="width:100px;border:5px solid #3f51b5" class="w3-round">
+         <p class="w3-left stile-p-text">
+           E' un prototipo di una webapp che consente di segnalare e quindi monitorare le strade ghiacciate o innevate in zona, al fine di evitare
+          possibili incidenti o quant'altro.<br>
+          Una volta effettuato il login, sarà possibile visualizzare una mappa sulla quale saranno indicati i tratti di
+          strada ghiacciati, innevati o particolarmente pericolosi segnalati dagli utenti stessi. Questa piattaforma in quale modo
+          potrà anche aiutare gli enti competenti alla pulizia stradale in quanto evidenzia i tratti stradali non ancora sgomberati.
+          </p>
+       </div>
      </div>
 
      <!-- Situazione -->
      <div class="w3-container" id="situazione" style="margin-top:100px">
-       <h1 class="w3-xxxlarge w3-text-indigo"><b><i>Situazione.</i></b></h1>
-       <hr style="width:100px;border:5px solid #3f51b5" class="w3-round">
-       <p></p>
+       <div class="w3-card-4 w3-panel w3-round-xlarge ">
+         <h1 class="w3-xxxlarge w3-text-indigo"><b><i>Situazione</i></b></h1>
+         <hr style="width:100px;border:5px solid #3f51b5" class="w3-round">
+         <p class="stile-p-text">Dati</p>
+       </div>
+     </div>
+
+     <!-- cosa fare? -->
+     <div class="w3-container" id="cosa-fare" style="margin-top:100px">
+       <div class="w3-card-4 w3-panel w3-round-xlarge ">
+         <h1 class="w3-xxxlarge w3-text-indigo"><b><i>Cosa fare?</i></b></h1>
+         <hr style="width:100px;border:5px solid #3f51b5" class="w3-round">
+         <p class="stile-p-text">
+           In caso di neve e ghiaccio, le condizioni stradali possono diventare rapidamente difficili, e quindi
+           è indispensabile seguire determinate regole per circolare senza problemi:
+         </p>
+         <br>
+         <ol class="w3-ul w3-left w3-text-indigo">
+           <li>1. Spostarsi solo con i veicoli dotati di pneumatici invernali.</li>
+           <li>2. Procedere a bassa velocità.</li>
+           <li>3. Nel caso ci si ritrovi incolonnati, lasciare un passaggio libero per i mezzi di pronto intervento.</li>
+           <li>4. Non sostare sotto gli alberi, in quanto è possibile la rottura dei rami per il peso della neve.</li>
+         </ul>
+       </div>
      </div>
    </div>
   </body>
