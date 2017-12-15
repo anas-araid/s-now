@@ -7,17 +7,29 @@
     <link type="text/css" rel="stylesheet" href="css/reset.css" />
     <link type="text/css" rel="stylesheet" href="css/style.css" />
     <link type="text/css" rel="stylesheet" href="css/w3.css" />
+    <script src="js/script.js"></script>
   </head>
   <body>
-    <!-- w3-collapse nasconde la sidebar sui dispositivi mobili-->
-    <nav class="w3-sidebar w3-indigo w3-collapse w3-large w3-top w3-padding" style="width:300px">
+    <!-- w3-collapse nasconde la sidebar sui dispositivi mobili
+        z-index è l'altezza rispetto al documento
+    -->
+    <nav id="menuLat" class="w3-sidebar w3-indigo w3-collapse w3-large w3-top w3-padding" style="width:300px; z-index:3;font-weight:bold;">
+      <!-- w3-hide-large classe che nasconde un elemento sui dispositivi grandi -->
+      <button class="stile-small-round-button w3-hide-large" onclick="chiudiMenu()">X</button>
       <div class="w3-container">
-        <h3 style="text-align:center"><b>s-now</b></h3>
+        <h1 style="text-align:center"><b>s-now</b></h1>
       </div>
       <div class="w3-bar-block">
 
       </div>
-
     </nav>
+    <!-- Menu in alto per i disp. mobili -->
+    <header class="w3-container w3-top w3-hide-large w3-indigo w3-xlarge w3-padding">
+      <button class="stile-small-round-button w3-hide-large" onclick="apriMenu();">☰</button>
+      <span>s-now</span>
+    </header>
+    <!-- Overlay è l'effetto di "opacità" sui disp. piccoli quando si apre il menu-->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+    
   </body>
 </html>
