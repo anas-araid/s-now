@@ -22,31 +22,31 @@
         <h3 style="text-align:center"><b>s-<i>now</i></b></h3>
       </div>
       <div class="w3-bar-block">
-        <a href="#"
+        <a href="index.html"
            onclick="chiudiMenu()"
            class="w3-bar-item w3-button w3-white w3-text-indigo w3-hover-indigo w3-hover-text-white w3-round-xxlarge"
            style="border: 1px solid white;"> <!-- Se sposto lo style nel file css, non funziona -->
            <i>Home</i>
          </a>
-        <a href="#cose"
+        <a href="index.html#cose"
            onclick="chiudiMenu()"
            class="w3-bar-item w3-button w3-white w3-text-indigo w3-hover-indigo w3-hover-text-white w3-round-xxlarge"
            style="border: 1px solid white;"> <!-- Se sposto lo style nel file css, non funziona -->
            <i>Cos'è?</i>
          </a>
-        <a href="#situazione"
+        <a href="index.html#situazione"
            onclick="chiudiMenu()"
            class="w3-bar-item w3-button w3-white w3-text-indigo w3-hover-indigo w3-hover-text-white w3-round-xxlarge"
            style="border: 1px solid white;">
            <i>Situazione</i>
          </a>
-         <a href="#cosa-fare"
+         <a href="index.html#cosa-fare"
             onclick="chiudiMenu()"
             class="w3-bar-item w3-button w3-white w3-text-indigo w3-hover-indigo w3-hover-text-white w3-round-xxlarge"
             style="border: 1px solid white;">
             <i>Cosa fare?</i>
           </a>
-          <a href="login.html"
+          <a href="#"
              onclick="chiudiMenu()"
              class="w3-bar-item w3-button w3-white w3-text-indigo w3-hover-indigo w3-hover-text-white w3-round-xxlarge"
              style="border: 1px solid white;">
@@ -71,59 +71,28 @@
     -->
     <!-- ================================= CORPO  ======================================================= -->
     <div class="w3-main" style="margin-left:340px;margin-right:40px">
-      <!-- Header -->
-      <div class="w3-container" style="margin-top:20%;text-align:center" id="header">
-        <h1 class="stile-title w3-text-indigo">
-          s-<i>now</i>
-        </h1>
-        <h4 class="w3-text-indigo">Snow not <b><i>now</i></b></h4>
-        <br>
-        <button class="stile-button" onclick="location.href='login.html'">Accedi</button>
-        <button class="stile-button-fill" onclick="location.href='#cose'">INFO</button>
+      <!-- Login -->
+      <div class="w3-container" id="situazione" style="margin-top:100px">
+        <div class="w3-card-4 w3-panel w3-round-xlarge ">
+          <h1 class="w3-xxxlarge w3-text-indigo"><b><i>Login</i></b></h1>
+          <hr style="width:100px;border:5px solid #3f51b5" class="w3-round">
+          <br>
+          <form action="" target="_blank">
+            <div class="w3-section">
+              <label>Email</label>
+              <input class="w3-input w3-border w3-round-xxlarge" type="text" name="Name" required="">
+            </div>
+            <div class="w3-section">
+              <label>Password</label>
+              <input class="w3-input w3-border w3-round-xxlarge" type="password" name="Email" required="">
+            </div>
+            <button type="submit" class="w3-button w3-block w3-padding-large w3-indigo w3-margin-bottom">Accedi</button>
+            <p class="stile-p-text" style="text-align:center">Oppure</p>
+            <br>
+            <button class="w3-button w3-block w3-padding-large w3-indigo w3-margin-bottom" onclick="signup.html">Registrati</button>
+          </form>
+        </div>
       </div>
-
-      <!-- Cos'è -->
-     <div class="w3-container" id="cose" style="margin-top:250px">
-       <div class="w3-card-4 w3-panel w3-round-xlarge" style="padding:50px;">
-         <h1 class="w3-xxxlarge w3-text-indigo"><b><i>Cos'è?</i></b></h1>
-         <hr style="width:100px;border:5px solid #3f51b5" class="w3-round">
-         <p class="w3-left stile-p-text">
-           E' un prototipo di una webapp che consente di segnalare e quindi monitorare le strade ghiacciate o innevate in zona, al fine di evitare
-          possibili incidenti o quant'altro.<br>
-          Una volta effettuato il login, sarà possibile visualizzare una mappa sulla quale saranno indicati i tratti di
-          strada ghiacciati, innevati o particolarmente pericolosi segnalati dagli utenti stessi. Questa piattaforma in quale modo
-          potrà anche aiutare gli enti competenti alla pulizia stradale in quanto evidenzia i tratti stradali non ancora sgomberati.
-          </p>
-       </div>
-     </div>
-
-     <!-- Situazione -->
-     <div class="w3-container" id="situazione" style="margin-top:100px">
-       <div class="w3-card-4 w3-panel w3-round-xlarge ">
-         <h1 class="w3-xxxlarge w3-text-indigo"><b><i>Situazione</i></b></h1>
-         <hr style="width:100px;border:5px solid #3f51b5" class="w3-round">
-         <p class="stile-p-text">Dati</p>
-       </div>
-     </div>
-
-     <!-- cosa fare? -->
-     <div class="w3-container" id="cosa-fare" style="margin-top:100px">
-       <div class="w3-card-4 w3-panel w3-round-xlarge ">
-         <h1 class="w3-xxxlarge w3-text-indigo"><b><i>Cosa fare?</i></b></h1>
-         <hr style="width:100px;border:5px solid #3f51b5" class="w3-round">
-         <p class="stile-p-text">
-           In caso di neve e ghiaccio, le condizioni stradali possono diventare rapidamente difficili, e quindi
-           è indispensabile seguire determinate regole per circolare senza problemi:
-         </p>
-         <br>
-         <ol class="w3-ul w3-left w3-text-indigo">
-           <li>1. Spostarsi solo con i veicoli dotati di pneumatici invernali.</li>
-           <li>2. Procedere a bassa velocità.</li>
-           <li>3. Nel caso ci si ritrovi incolonnati, lasciare un passaggio libero per i mezzi di pronto intervento.</li>
-           <li>4. Non sostare sotto gli alberi, in quanto è possibile la rottura dei rami per il peso della neve.</li>
-         </ul>
-       </div>
-     </div>
-   </div>
+    </div>
   </body>
 </html>
