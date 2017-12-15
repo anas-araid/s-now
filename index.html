@@ -10,26 +10,71 @@
     <script src="js/script.js"></script>
   </head>
   <body>
-    <!-- w3-collapse nasconde la sidebar sui dispositivi mobili
-        z-index è l'altezza rispetto al documento
+    <!-- ========================== SIDEBAR ==========================================================
+
+     w3-collapse nasconde la sidebar sui dispositivi mobili
+
     -->
     <nav id="menuLat" class="w3-sidebar w3-indigo w3-collapse w3-large w3-top w3-padding" style="width:300px; z-index:3;font-weight:bold;">
       <!-- w3-hide-large classe che nasconde un elemento sui dispositivi grandi -->
       <button class="stile-small-round-button w3-hide-large" onclick="chiudiMenu()">X</button>
       <div class="w3-container">
-        <h1 style="text-align:center"><b>s-now</b></h1>
+        <h4 style="text-align:center"><b>s-<i>now</i></b></h4>
       </div>
       <div class="w3-bar-block">
-
+        <a href="#cose"
+           onclick="chiudiMenu()"
+           class="w3-bar-item w3-button w3-white w3-text-indigo w3-hover-indigo w3-hover-text-white w3-round-xxlarge">
+           <i>Cos'è</i>
+         </a>
+        <a href="#situazione"
+           onclick="chiudiMenu()"
+           class="w3-bar-item w3-button w3-white w3-text-indigo w3-hover-indigo w3-hover-text-white w3-round-xxlarge">
+           <i>Situazione</i>
+         </a>
       </div>
     </nav>
-    <!-- Menu in alto per i disp. mobili -->
+
+    <!-- =================================== Menu in alto per i disp. mobili ========================================= -->
     <header class="w3-container w3-top w3-hide-large w3-indigo w3-xlarge w3-padding">
       <button class="stile-small-round-button w3-hide-large" onclick="apriMenu();">☰</button>
-      <span>s-now</span>
+      <span>s-<i>now</i></span>
     </header>
-    <!-- Overlay è l'effetto di "opacità" sui disp. piccoli quando si apre il menu-->
-    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-    
+
+    <!-- ================================== OPACITA' =================================================================
+
+    Overlay è l'effetto di "opacità" sui disp. piccoli quando si apre il menu-->
+    <div class="w3-overlay w3-hide-large" onclick="chiudiMenu()" style="cursor:pointer" id="opacita"></div>
+    <!--
+        Contenuto della pagina
+        il margin left è a 340px per non sovrapporsi con la sidebar
+    -->
+    <!-- ================================= CORPO  ======================================================= -->
+    <div class="w3-main" style="margin-left:340px;margin-right:40px">
+      <!-- Header -->
+      <div class="w3-container" style="margin-top:20%;text-align:center" id="header">
+        <h1 class="stile-title w3-text-indigo">
+          s-<i>now</i>
+        </h1>
+        <h4 class="w3-text-indigo">Snow not <b><i>now</i></b></h4>
+        <br>
+        <button class="stile-button">LOGIN</button>
+        <button class="stile-button-fill" onclick="location.href='#cose'">INFO</button>
+      </div>
+
+      <!-- Cos'è -->
+     <div class="w3-container" id="cose" style="margin-top:250px">
+       <h1 class="w3-xxxlarge w3-text-indigo"><b><i>Cos'è?</i></b></h1>
+       <hr style="width:100px;border:5px solid #3f51b5" class="w3-round">
+       <p></p>
+     </div>
+
+     <!-- Situazione -->
+     <div class="w3-container" id="situazione" style="margin-top:100px">
+       <h1 class="w3-xxxlarge w3-text-indigo"><b><i>Situazione.</i></b></h1>
+       <hr style="width:100px;border:5px solid #3f51b5" class="w3-round">
+       <p></p>
+     </div>
+   </div>
   </body>
 </html>
