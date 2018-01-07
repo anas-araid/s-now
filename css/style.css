@@ -94,9 +94,9 @@ input:focus{
 .stile-main{
   background: #56CCF2;
   background-repeat:no-repeat;
-  background: -webkit-linear-gradient( to left, #e96443, #904e95);
-  background: -moz-linear-gradient( to left, #e96443, #904e95);
-  background: -ms-linear-gradient( to left, #e96443, #904e95);
-  background: -o-linear-gradient( to left, #e96443, #904e95);
+  background: -webkit-linear-gradient( to left, #00d2ff, #2173b9);
+  background: -moz-linear-gradient( to left, #00d2ff, #2173b9);
+  background: -ms-linear-gradient( to left, #00d2ff, #2173b9);
+  background: -o-linear-gradient( to left, #00d2ff, #2173b9);
   background: linear-gradient( to left , #00d2ff, #2173b9);
 }
