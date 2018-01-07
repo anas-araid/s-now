@@ -1,4 +1,4 @@
-﻿<!doctype>
+<!doctype>
 <html>
   <head>
     <title>s-now</title>
@@ -29,7 +29,7 @@
          class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
          <p>Home</p>
         </a>
-        <a href="mappa.html"
+        <a href="#"
           onclick="chiudiMenu()"
           class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
           <p>Mappa</p>
@@ -54,7 +54,7 @@
           class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
           <p>Gallery</p>
         </a>
-        <a href="#"
+        <a href="login.html"
           onclick="chiudiMenu()"
           class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
           <p>Accedi</p>
@@ -79,29 +79,30 @@
         il margin left è a 340px per non sovrapporsi con la sidebar
     -->
     <div class="w3-main stile-main" style="margin-left:300px;">
-      <!-- Login -->
-      <div class="w3-container" id="situazione" style="padding-top:100px;padding-bottom:72px;">
+      <!-- Mappa -->
+      <div class="w3-container" id="mappa" style="padding-top:10px;padding-bottom:100px;">
         <div class="w3-card-4 w3-panel w3-round-xlarge stile-card">
-          <h1 class="w3-xxxlarge w3-text-white"><b><i>Login</i></b></h1>
+          <h1 class="w3-xxxlarge w3-text-white"><b><i>Mappa</i></b></h1>
           <hr style="width:100px;border:5px solid white" class="w3-round">
-          <br>
-          <form action="" target="_blank" style="color:white;text-align:center">
-            <div class="w3-section">
-              <label>Email</label>
-              <input class="w3-input w3-border w3-round-xxlarge" type="text" name="Name" required="">
-            </div>
-            <div class="w3-section">
-              <label>Password</label>
-              <input class="w3-input w3-border w3-round-xxlarge" type="password" name="Email" required="">
-            </div>
-            <button type="submit" class="stile-bottone-generico stile-button-fill" style="width:50%;margin:2%;">Accedi</button>
-            <p class="w3-text-white" style="text-align:center">Oppure</p>
-          </form>
-          <div style="text-align:center;margin:2%">
-            <button class="stile-bottone-generico stile-button-fill" style="width:50%;" onclick="signup.html">Registrati</button>
-          </div>
+          <div id="mapdiv"></div>
         </div>
       </div>
+      <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+      <script>
+        map = new OpenLayers.Map("mapdiv");
+        map.addLayer(new OpenLayers.Layer.OSM());
+        var lonLat = new OpenLayers.LonLat(42.088,12.564)
+              .transform(
+                new OpenLayers.Projection("EPSG:3004"), // Sistema di riferimento
+                map.getProjectionObject() // Proiezione Mercatore
+              );
+        var zoom=16;
+        //marker
+        var markers = new OpenLayers.Layer.Markers( "Markers" );
+        map.addLayer(markers);
+        markers.addMarker(new OpenLayers.Marker(lonLat));
+        map.setCenter (lonLat, zoom);
+      </script>
     </div>
   </body>
 </html>

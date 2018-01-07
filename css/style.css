@@ -83,6 +83,8 @@ input:focus{
 }
 #mapdiv{
   z-index: -20!important; /* non funzionante, sui disp mobili la mappa sovrappone il nav */
+  border-radius: 20px;
+  overflow: hidden;
 }
 .stile-link{
   color: white;
@@ -117,5 +119,6 @@ input:focus{
 .stile-gallery{
   margin-left: auto;
   margin-right: auto;
-  max-width:500px;
+  max-width: 400px;
+  max-height: 400px;
 }
