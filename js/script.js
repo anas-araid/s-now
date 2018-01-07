@@ -1,4 +1,4 @@
-// script per aprire e chiudere la sidebar
+// funzioni per aprire e chiudere la sidebar
 function apriMenu() {
     document.getElementById("menuLat").style.display = "block";
     document.getElementById("opacita").style.display = "block";

@@ -1,4 +1,4 @@
-﻿<!doctype>
+<!doctype>
 <html>
   <head>
     <title>s-now</title>
@@ -16,45 +16,46 @@
      w3-collapse nasconde la sidebar sui dispositivi mobili
 
     -->
-    <nav id="menuLat" class="w3-sidebar w3-indigo w3-collapse w3-large w3-top w3-padding" style="width:300px; z-index:3;font-weight:bold;">
+    <nav id="menuLat" class="stile-azzurro w3-sidebar w3-collapse w3-large w3-top w3-padding" style="width:300px; z-index:3;font-weight:bold;">
       <!-- w3-hide-large classe che nasconde un elemento sui dispositivi grandi -->
       <button class="stile-small-round-button w3-hide-large" onclick="chiudiMenu()">X</button>
       <div class="w3-container">
-        <h3 style="text-align:center"><b>s-<i>now</i></b></h3>
+        <h3 style="text-align:center;color:white;"><b>s-<i>now</i></b></h3>
       </div>
+      <!-- w3-bar-block server per tenere la bar verticalmente-->
       <div class="w3-bar-block">
         <a href="#"
-           onclick="chiudiMenu()"
-           class="w3-bar-item w3-button w3-indigo w3-text-white w3-hover-white w3-hover-text-indigo w3-round-xxlarge">
-           <p>Home</p>
-         </a>
+          onclick="chiudiMenu()"
+          class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
+          <p>Home</p>
+        </a>
         <a href="#cose"
-           onclick="chiudiMenu()"
-           class="w3-bar-item w3-button w3-indigo w3-text-white w3-hover-white w3-hover-text-indigo w3-round-xxlarge">
-           <p>Cos'è?</p>
-         </a>
+          onclick="chiudiMenu()"
+          class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
+          <p>Cos'è?</p>
+        </a>
         <a href="#situazione"
-           onclick="chiudiMenu()"
-           class="w3-bar-item w3-button w3-indigo w3-text-white w3-hover-white w3-hover-text-indigo w3-round-xxlarge">
-           <p>Situazione</p>
-         </a>
-         <a href="#consigli"
-            onclick="chiudiMenu()"
-            class="w3-bar-item w3-button w3-indigo w3-text-white w3-hover-white w3-hover-text-indigo w3-round-xxlarge">
-            <p>Consigli</p>
-          </a>
-          <a href="login.html"
-             onclick="chiudiMenu()"
-             class="w3-bar-item w3-button w3-indigo w3-text-white w3-hover-white w3-hover-text-indigo w3-round-xxlarge">
-             <p>Login</p>
-           </a>
+          onclick="chiudiMenu()"
+          class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
+         <p>Situazione</p>
+        </a>
+        <a href="#consigli"
+          onclick="chiudiMenu()"
+          class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
+          <p>Consigli</p>
+        </a>
+        <a href="login.html"
+          onclick="chiudiMenu()"
+          class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
+          <p>Login</p>
+        </a>
       </div>
     </nav>
 
     <!-- =================================== Menu in alto per i disp. mobili ========================================= -->
-    <header class="w3-container w3-top w3-hide-large w3-indigo w3-xlarge w3-padding">
+    <header class="w3-container w3-top w3-hide-large stile-azzurro w3-xlarge w3-padding">
       <button class="stile-small-round-button w3-hide-large" onclick="apriMenu();">☰</button>
-      <span>s-<i>now</i></span>
+      <span style="color:white">s-<i>now</i></span>
     </header>
 
     <!-- ================================== OPACITA' =================================================================
@@ -67,24 +68,24 @@
         Contenuto della pagina
         il margin left è a 340px per non sovrapporsi con la sidebar
     -->
-    <div class="w3-main" style="margin-left:340px;margin-right:40px">
+    <div class="w3-main stile-main" style="margin-left:300px;">
       <!-- Header -->
-      <div class="w3-container" style="margin-top:20%;text-align:center" id="header">
-        <h1 class="stile-title w3-text-indigo">
+      <div class="w3-container stile-main" style="padding-top:20%;text-align:center;padding-bottom:250px" id="header">
+        <h1 class="stile-title w3-text-white">
           s-<i>now</i>
         </h1>
-        <h4 class="w3-text-indigo">Snow not <b><i>now</i></b></h4>
+        <h4 class="w3-text-white">Snow not <b><i>now</i></b></h4>
         <br>
-        <button class="stile-button" onclick="location.href='login.html'">Accedi</button>
-        <button class="stile-button-fill" onclick="location.href='mappa.html'">Mappa</button>
+        <button class="stile-bottone-generico stile-button" onclick="location.href='login.html'">Accedi</button>
+        <button class="stile-bottone-generico stile-button-fill" onclick="location.href='mappa.html'">Mappa</button>
       </div>
 
       <!-- Cos'è -->
-     <div class="w3-container" id="cose" style="margin-top:250px">
-       <div class="w3-card-4 w3-panel w3-round-xlarge" style="padding:50px;">
-         <h1 class="w3-xxxlarge w3-text-indigo"><b><i>Cos'è?</i></b></h1>
-         <hr style="width:100px;border:5px solid #3f51b5" class="w3-round">
-         <p class="w3-left stile-p-text">
+     <div class="w3-container" id="cose">
+       <div class="w3-card-4 w3-panel w3-round-xlarge stile-card" style="padding:50px;">
+         <h1 class="w3-xxxlarge w3-text-white"><b><i>Cos'è?</i></b></h1>
+         <hr style="width:100px;border:5px solid white" class="w3-round">
+         <p class="w3-left w3-text-white">
            E' un prototipo di una webapp che consente di segnalare e quindi monitorare le strade ghiacciate o innevate in zona, al fine di evitare
           possibili incidenti o quant'altro.<br>
           Una volta effettuato il login, sarà possibile visualizzare una mappa sulla quale saranno indicati i tratti di
@@ -96,24 +97,24 @@
 
      <!-- Situazione -->
      <div class="w3-container" id="situazione" style="margin-top:100px">
-       <div class="w3-card-4 w3-panel w3-round-xlarge ">
-         <h1 class="w3-xxxlarge w3-text-indigo"><b><i>Situazione</i></b></h1>
-         <hr style="width:100px;border:5px solid #3f51b5" class="w3-round">
-         <p class="stile-p-text">Dati</p>
+       <div class="w3-card-4 w3-panel w3-round-xlarge stile-card">
+         <h1 class="w3-xxxlarge w3-text-white"><b><i>Situazione</i></b></h1>
+         <hr style="width:100px;border:5px solid white" class="w3-round">
+         <p class="w3-text-white">Dati</p>
        </div>
      </div>
 
      <!-- Consigli? -->
      <div class="w3-container" id="consigli" style="margin-top:100px">
-       <div class="w3-card-4 w3-panel w3-round-xlarge ">
-         <h1 class="w3-xxxlarge w3-text-indigo"><b><i>Consigli</i></b></h1>
-         <hr style="width:100px;border:5px solid #3f51b5" class="w3-round">
-         <p class="stile-p-text">
+       <div class="stile-card w3-card-4 w3-panel w3-round-xlarge">
+         <h1 class="w3-xxxlarge w3-text-white"><b><i>Consigli</i></b></h1>
+         <hr style="width:100px;border:5px solid white" class="w3-round">
+         <p class="w3-text-white">
            In caso di neve e ghiaccio, le condizioni stradali possono diventare rapidamente difficili, e quindi
            è indispensabile seguire determinate regole per circolare senza problemi:
          </p>
          <br>
-         <ol class="w3-ul w3-left w3-text-indigo">
+         <ol class="w3-ul w3-left w3-text-white">
            <li>1. Spostarsi solo con i veicoli dotati di pneumatici invernali.</li>
            <li>2. Procedere a bassa velocità.</li>
            <li>3. Nel caso ci si ritrovi incolonnati, lasciare un passaggio libero per i mezzi di pronto intervento.</li>

@@ -16,45 +16,46 @@
      w3-collapse nasconde la sidebar sui dispositivi mobili
 
     -->
-    <nav id="menuLat" class="w3-sidebar w3-indigo w3-collapse w3-large w3-top w3-padding" style="width:300px; z-index:3;font-weight:bold;">
+    <nav id="menuLat" class="stile-azzurro w3-sidebar w3-collapse w3-large w3-top w3-padding" style="width:300px; z-index:3;font-weight:bold;">
       <!-- w3-hide-large classe che nasconde un elemento sui dispositivi grandi -->
       <button class="stile-small-round-button w3-hide-large" onclick="chiudiMenu()">X</button>
       <div class="w3-container">
-        <h3 style="text-align:center"><b>s-<i>now</i></b></h3>
+        <h3 style="text-align:center;color:white;"><b>s-<i>now</i></b></h3>
       </div>
+      <!-- w3-bar-block server per tenere la bar verticalmente-->
       <div class="w3-bar-block">
         <a href="index.html"
-           onclick="chiudiMenu()"
-           class="w3-bar-item w3-button w3-indigo w3-text-white w3-hover-white w3-hover-text-indigo w3-round-xxlarge">
-           <p>Home</p>
+         onclick="chiudiMenu()"
+         class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
+         <p>Home</p>
         </a>
         <a href="index.html#cose"
-           onclick="chiudiMenu()"
-           class="w3-bar-item w3-button w3-indigo w3-text-white w3-hover-white w3-hover-text-indigo w3-round-xxlarge">
-           <p>Cos'è</p>
+         onclick="chiudiMenu()"
+         class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
+         <p>Cos'è?</p>
         </a>
         <a href="index.html#situazione"
-           onclick="chiudiMenu()"
-           class="w3-bar-item w3-button w3-indigo w3-text-white w3-hover-white w3-hover-text-indigo w3-round-xxlarge">
-           <p>Situazione</p>
+         onclick="chiudiMenu()"
+         class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
+         <p>Situazione</p>
         </a>
-         <a href="index.html#consigli"
-            onclick="chiudiMenu()"
-            class="w3-bar-item w3-button w3-indigo w3-text-white w3-hover-white w3-hover-text-indigo w3-round-xxlarge">
-            <p>Consigli</p>
-         </a>
-          <a href="#"
-             onclick="chiudiMenu()"
-             class="w3-bar-item w3-button w3-indigo w3-text-white w3-hover-white w3-hover-text-indigo w3-round-xxlarge">
-             <p>Login</p>
-          </a>
+        <a href="index.html#consigli"
+          onclick="chiudiMenu()"
+          class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
+          <p>Consigli</p>
+        </a>
+        <a href="#"
+          onclick="chiudiMenu()"
+          class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
+          <p>Login</p>
+        </a>
       </div>
     </nav>
 
     <!-- =================================== Menu in alto per i disp. mobili ========================================= -->
-    <header class="w3-container w3-top w3-hide-large w3-indigo w3-xlarge w3-padding">
+    <header class="w3-container w3-top w3-hide-large stile-azzurro w3-xlarge w3-padding">
       <button class="stile-small-round-button w3-hide-large" onclick="apriMenu();">☰</button>
-      <span>s-<i>now</i></span>
+      <span style="color:white">s-<i>now</i></span>
     </header>
 
     <!-- ================================== OPACITA' =================================================================
@@ -67,14 +68,14 @@
         Contenuto della pagina
         il margin left è a 340px per non sovrapporsi con la sidebar
     -->
-    <div class="w3-main" style="margin-left:340px;margin-right:40px">
+    <div class="w3-main stile-main" style="margin-left:300px;">
       <!-- Login -->
-      <div class="w3-container" id="situazione" style="margin-top:100px">
-        <div class="w3-card-4 w3-panel w3-round-xlarge ">
-          <h1 class="w3-xxxlarge w3-text-indigo"><b><i>Login</i></b></h1>
-          <hr style="width:100px;border:5px solid #3f51b5" class="w3-round">
+      <div class="w3-container" id="situazione" style="padding-top:100px;padding-bottom:72px;">
+        <div class="w3-card-4 w3-panel w3-round-xlarge stile-card">
+          <h1 class="w3-xxxlarge w3-text-white"><b><i>Login</i></b></h1>
+          <hr style="width:100px;border:5px solid white" class="w3-round">
           <br>
-          <form action="" target="_blank">
+          <form action="" target="_blank" style="color:white;text-align:center">
             <div class="w3-section">
               <label>Email</label>
               <input class="w3-input w3-border w3-round-xxlarge" type="text" name="Name" required="">
@@ -83,11 +84,12 @@
               <label>Password</label>
               <input class="w3-input w3-border w3-round-xxlarge" type="password" name="Email" required="">
             </div>
-            <button type="submit" class="w3-button w3-block w3-padding-large w3-indigo w3-margin-bottom">Accedi</button>
-            <p class="stile-p-text" style="text-align:center">Oppure</p>
-            <br>
+            <button type="submit" class="stile-bottone-generico stile-button-fill" style="width:50%;margin:2%;">Accedi</button>
+            <p class="w3-text-white" style="text-align:center">Oppure</p>
           </form>
-          <button class="w3-button w3-block w3-padding-large w3-indigo w3-margin-bottom" onclick="signup.html">Registrati</button>
+          <div style="text-align:center;margin:2%">
+            <button class="stile-bottone-generico stile-button-fill" style="width:50%;" onclick="signup.html">Registrati</button>
+          </div>
         </div>
       </div>
     </div>
