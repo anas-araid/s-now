@@ -122,3 +122,11 @@ input:focus{
   max-width: 400px;
   max-height: 400px;
 }
+.stile-footer{
+  background-color: rgba(250, 250, 250, 0.2);
+  height: auto;
+  width: auto;
+  border: none;
+  border-radius: 20px;
+  padding: 2px;
+  }

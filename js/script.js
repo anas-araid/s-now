@@ -2,7 +2,7 @@
 function apriMenu() {
     document.getElementById("menuLat").style.display = "block";
     document.getElementById("opacita").style.display = "block";
-    document.getElementById("mapdiv").style.display = "none"; // la mappa sovrapponeva la sidebar 
+    document.getElementById("mapdiv").style.display = "none"; // la mappa sovrapponeva la sidebar
 }
 
 function chiudiMenu() {
