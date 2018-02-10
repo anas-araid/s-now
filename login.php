@@ -8,21 +8,22 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
     $sql = "SELECT * FROM t_utenti";
-    echo "<script>alert('asdf')</script>";
     $risultato = mysqli_query($conn, $sql);
     if ($risultato == false){
       die("error");
     }
+    echo "<script>alert(".$username.")</script>";
     while($ris = mysqli_fetch_array ($risultato, MYSQLI_ASSOC)){
       $db_username = $ris['Email'];
       $db_password = $ris['Password'];
+      echo "<script>alert($db_username)</script>";
       //echo "user ".$db_username." ".$username;
       //echo "\npwd ".$db_password." ".md5($password);
-      if ($db_username == $username && $db_password == md5($password)) {
+      if ($db_username == $username && $db_password == $password) {
         echo "<script>alert('Login corretto')</script>";
         $_SESSION['Nome'] = $ris['Nome'];
         $_SESSION['isLogged'] = true;
-        //header("location:magazzino.php");
+        //header("location:dashboard.php");
       }
     }
     /*$_POST['username']="";
