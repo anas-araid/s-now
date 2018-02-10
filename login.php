@@ -1,4 +1,40 @@
-﻿<!doctype>
+<?php
+  session_start();
+  $_SESSION["Nome"] = "";
+  $_SESSION['isLogged'] = false;
+  // isset ritorna true se una variabile è stata assegnata
+  if (isset($_POST['username']) && isset($_POST['password'])){
+    include "connection.php";
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $sql = "SELECT * FROM t_utenti";
+    echo "<script>alert('asdf')</script>";
+    $risultato = mysqli_query($conn, $sql);
+    if ($risultato == false){
+      die("error");
+    }
+    while($ris = mysqli_fetch_array ($risultato, MYSQLI_ASSOC)){
+      $db_username = $ris['Email'];
+      $db_password = $ris['Password'];
+      //echo "user ".$db_username." ".$username;
+      //echo "\npwd ".$db_password." ".md5($password);
+      if ($db_username == $username && $db_password == md5($password)) {
+        echo "<script>alert('Login corretto')</script>";
+        $_SESSION['Nome'] = $ris['Nome'];
+        $_SESSION['isLogged'] = true;
+        //header("location:magazzino.php");
+      }
+    }
+    /*$_POST['username']="";
+    $_POST['password']="";
+    if (!$_SESSION['isLogged']) {
+      echo "<script>alert('Username o password errati')</script>";
+    }*/
+    //mysqli_close($conn);
+  }
+?>
+
+<!doctype>
 <html>
   <head>
     <title>s-now</title>
@@ -10,7 +46,7 @@
     <link type="text/css" rel="stylesheet" href="css/w3.css" />
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
+
     <script src="js/script.js"></script>
   </head>
   <body>
@@ -94,14 +130,16 @@
           <h1 class="w3-xxxlarge w3-text-white"><b><i>Login</i></b></h1>
           <hr style="width:100px;border:5px solid white" class="w3-round">
           <br>
-          <form onsubmit="alert('Funzione non ancora disponibile')" target="_blank" style="color:white;text-align:center">
+          <form action="" method="post" style="color:white;text-align:center">
             <div class="w3-section">
               <label>Email <i class="fa fa-envelope"></i></label>
-              <input class="w3-input w3-border w3-round-xxlarge" type="text" name="Name" required="">
+              <input style="color:white;background-color:rgba(255, 255, 255, 0.3);text-align:center;outline:none;border:none!important;"
+                    class="w3-input w3-border w3-round-xxlarge" type="text" name="username" required="">
             </div>
             <div class="w3-section">
               <label>Password <i class="fa fa-lock"></i></label>
-              <input class="w3-input w3-border w3-round-xxlarge" type="password" name="Email" required="">
+              <input style="color:white;background-color:rgba(255, 255, 255, 0.3);text-align:center;outline:none;border:none!important;"
+                     class="w3-input w3-border w3-round-xxlarge" type="password" name="password" required="">
             </div>
             <button type="submit" class="stile-bottone-generico stile-button-fill" style="width:50%;">Accedi <i class="fa fa-sign-in"></i></button>
           </form>
