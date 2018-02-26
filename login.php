@@ -1,37 +1,43 @@
 <?php
+  include 'include/functions.php';
+  include "include/db_connection.php";
+
   session_start();
   $_SESSION["Nome"] = "";
   $_SESSION['isLogged'] = false;
-  // isset ritorna true se una variabile è stata assegnata
-  if (isset($_POST['username']) && isset($_POST['password'])){
-    include "connection.php";
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $sql = "SELECT * FROM t_utenti";
-    $risultato = mysqli_query($conn, $sql);
-    if ($risultato == false){
-      die("error");
-    }
-    echo "<script>alert(".$username.")</script>";
-    while($ris = mysqli_fetch_array ($risultato, MYSQLI_ASSOC)){
-      $db_username = $ris['Email'];
-      $db_password = $ris['Password'];
-      echo "<script>alert($db_username)</script>";
-      //echo "user ".$db_username." ".$username;
-      //echo "\npwd ".$db_password." ".md5($password);
-      if ($db_username == $username && $db_password == $password) {
-        echo "<script>alert('Login corretto')</script>";
-        $_SESSION['Nome'] = $ris['Nome'];
-        $_SESSION['isLogged'] = true;
-        //header("location:dashboard.php");
+  if (!$error_message) {
+    // isset ritorna true se una variabile è stata assegnata
+    if (isset($_POST['username']) && isset($_POST['password'])){
+      $username = $_POST['username'];
+      $password = $_POST['password'];
+      $sql = "SELECT * FROM t_utenti";
+      $risultato = mysqli_query($conn, $sql);
+      if ($risultato == false){
+        die("error");
       }
+      php_alert($db_username);
+      while($ris = mysqli_fetch_array ($risultato, MYSQLI_ASSOC)){
+        $db_username = $ris['Email'];
+        $db_password = $ris['Password'];
+        php_alert($db_username);
+        //echo "user ".$db_username." ".$username;
+        //echo "\npwd ".$db_password." ".md5($password);
+        if ($db_username == $username && $db_password == $password) {
+          php_alert('Login corretto');
+          $_SESSION['Nome'] = $ris['Nome'];
+          $_SESSION['isLogged'] = true;
+          //header("location:dashboard.php");
+        }
+      }
+      /*$_POST['username']="";
+      $_POST['password']="";
+      if (!$_SESSION['isLogged']) {
+        echo "<script>alert('Username o password errati')</script>";
+      }*/
+      //mysqli_close($conn);
     }
-    /*$_POST['username']="";
-    $_POST['password']="";
-    if (!$_SESSION['isLogged']) {
-      echo "<script>alert('Username o password errati')</script>";
-    }*/
-    //mysqli_close($conn);
+  }else{
+    php_alert('Impossibile connettersi al database');
   }
 ?>
 

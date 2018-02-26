@@ -35,6 +35,9 @@ button.stile-bottone-generico{
   background-color: rgba(250, 250, 250, 0.2);
   color: white;
 }
+button{
+  outline: none;
+}
 button:focus{
   outline: none;
 }

@@ -1,34 +1,46 @@
 /*DROP DATABASE IF EXISTS my_snow;*/
-
 CREATE DATABASE IF NOT EXISTS my_snow DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci;
-
 USE my_snow;
 
-CREATE TABLE t_utenti(
-  ID_utente     BIGINT            NOT NULL AUTO_INCREMENT,
-  Nome          VARCHAR(50),
-  Cognome       VARCHAR(50),
-  DataDiNascita DATE,
-  Genere        ENUM('M', 'F'),
-  Citta         VARCHAR(50),
-  Bio           VARCHAR(50),
-  Valutazione   ENUM('1', '2', '3', '4', '5'),
-  Email         VARCHAR(50) UNIQUE,
-  Password      CHAR(65),
-  PRIMARY KEY(ID_utente)
-)ENGINE=InnoDB;
+CREATE TABLE t_utenti (
+  ID 		           BIGINT				NOT NULL 	AUTO_INCREMENT,
+  Nome	 			     VARCHAR(50),
+  Cognome			     VARCHAR(50),
+  DataDiNascita		 DATE,
+  Sesso 			     ENUM('M', 'F'),
+  Residenza        VARCHAR(50),
+  FotoProfilo      VARCHAR(100),
+  Valutazione      ENUM('1', '2', '3', '4', '5'),
+  Email 			     VARCHAR(50)	UNIQUE,
+  Password			   CHAR(64),
+  PRIMARY KEY(ID)
+) ENGINE = InnoDB;
 
 CREATE TABLE t_segnalazioni(
-  ID_segnalazione   BIGINT NOT NULL AUTO_INCREMENT,
-  Via           VARCHAR(50),
-  Longitudine   VARCHAR(50),
-  Latitudine    VARCHAR(50),
-  Pericolosita  ENUM('Bassa', 'Medio-bassa', 'Media', 'Medio-alta', 'Alta'),
-  Data          DATE,
-  Immagine      VARCHAR(80),
-  FK_IdUtente   BIGINT,
-  PRIMARY KEY(ID_segnalazione),
-  FOREIGN KEY (FK_IdUtente) REFERENCES my_snow.t_utenti(ID_utente)
+  ID              BIGINT        NOT NULL AUTO_INCREMENT,
+  Latitudine      VARCHAR(40),
+  Longitudine     VARCHAR(40),
+  Descrizione     CHAR(64),
+  Pericolosita    ENUM('Bassa', 'Medio-bassa','Media', 'Medio-alta', 'Alta'),
+  Data            DATE,
+  FK_utente       BIGINT,
+  PRIMARY KEY(ID),
+  FOREIGN KEY(FK_utente)    REFERENCES t_utenti(ID)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION
+    ON UPDATE CASCADE
+)ENGINE=InnoDB;
+
+CREATE TABLE t_messaggi(
+  ID              BIGINT        NOT NULL AUTO_INCREMENT,
+  Data            DATE,
+  Messaggio       VARCHAR(130),
+  FK_Mittente     BIGINT        NOT NULL,
+  FK_Destinatario BIGINT        NOT NULL,
+  PRIMARY KEY(ID),
+  FOREIGN KEY(FK_Mittente)    REFERENCES t_utenti(ID)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  FOREIGN KEY(FK_Destinatario)    REFERENCES t_utenti(ID)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 )ENGINE=InnoDB;
