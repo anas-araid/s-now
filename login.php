@@ -8,7 +8,7 @@
   if (!$error_message) {
     // isset ritorna true se una variabile è stata assegnata
     if (isset($_POST['username']) && isset($_POST['password'])){
-      $username = $_POST['username'];
+      $username = text_filter_lowercase($_POST['username']);
       $password = $_POST['password'];
       $sql = "SELECT * FROM t_utenti";
       $risultato = mysqli_query($db_conn, $sql);
@@ -18,7 +18,7 @@
       while($ris = mysqli_fetch_array ($risultato, MYSQLI_ASSOC)){
         $db_username = $ris['Email'];
         $db_password = $ris['Password'];
-        if ($db_username == $username && $db_password == $password) {
+        if ($db_username == $username && $db_password == text_filter_encrypt($password)) {
           php_alert('Login corretto');
           $_SESSION['Nome'] = $ris['Nome'];
           $_SESSION['isLogged'] = true;
@@ -40,18 +40,10 @@
 <!doctype>
 <html>
   <head>
-    <title>s-now</title>
-    <meta charset="utf-8"/>
-    <meta name="theme-color" content="#2173b9">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" rel="stylesheet" href="css/reset.css" />
-    <link type="text/css" rel="stylesheet" href="css/style.css" />
-    <link type="text/css" rel="stylesheet" href="css/w3.css" />
-    <link rel="stylesheet" href="css/font-awesome.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-    <script src="js/script.js"></script>
-  </head>
+  <?php
+    include "include/header.html";
+   ?>
+ </head>
   <body>
     <?php
       include "include/sidebar.html";
@@ -65,7 +57,6 @@
         include "include/login.html";
         include "include/footer.html";
        ?>
-
     </div>
   </body>
 </html>

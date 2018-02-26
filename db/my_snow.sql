@@ -7,7 +7,7 @@ CREATE TABLE t_utenti (
   Nome	 			     VARCHAR(50),
   Cognome			     VARCHAR(50),
   DataDiNascita		 DATE,
-  Sesso 			     ENUM('M', 'F'),
+  Genere 			     ENUM('M', 'F'),
   Residenza        VARCHAR(50),
   FotoProfilo      VARCHAR(100),
   Valutazione      ENUM('1', '2', '3', '4', '5'),
