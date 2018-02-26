@@ -10,6 +10,7 @@
     if (isset($_POST['username']) && isset($_POST['password'])){
       $username = text_filter_lowercase($_POST['username']);
       $password = $_POST['password'];
+      php_alert($username." ".$password);
       $sql = "SELECT * FROM t_utenti";
       $risultato = mysqli_query($db_conn, $sql);
       if ($risultato == false){
