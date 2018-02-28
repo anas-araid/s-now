@@ -1,6 +1,6 @@
 <?php
-  include 'include/functions.php';
-  include "include/db_connection.php";
+  include 'php/functions.php';
+  include "php/db_connection.php";
 
   session_start();
   $_SESSION["Nome"] = "";

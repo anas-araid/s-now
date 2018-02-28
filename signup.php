@@ -1,6 +1,6 @@
 <?php
-    include 'include/db_connection.php';
-    include 'include/functions.php';
+    include 'php/db_connection.php';
+    include 'php/functions.php';
     session_start();
     if (!$error_message) {
         if (isset($_POST['nome']) &&
