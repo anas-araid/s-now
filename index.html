@@ -1,4 +1,3 @@
-<!doctype>
 <html>
   <head>
     <title>s-now</title>
@@ -6,202 +5,154 @@
     <meta name="theme-color" content="#2173b9">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="css/reset.css" />
+    <link type="text/css" rel="stylesheet" href="css/material.min.css" />
     <link type="text/css" rel="stylesheet" href="css/style.css" />
-    <link type="text/css" rel="stylesheet" href="css/w3.css" />
     <link rel="stylesheet" href="css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="js/material.js"></script>
     <script src="js/script.js"></script>
   </head>
-  <body>
-    <!-- ========================== SIDEBAR ==========================================================
-
-     w3-collapse nasconde la sidebar sui dispositivi mobili
-
-    -->
-    <nav id="menuLat" class="stile-azzurro w3-sidebar w3-collapse w3-large w3-top w3-padding" style="width:300px; z-index:3;font-weight:bold;">
-      <!-- w3-hide-large classe che nasconde un elemento sui dispositivi grandi -->
-      <button class="stile-small-round-button w3-hide-large" onclick="chiudiMenu()">X</button>
-      <div class="w3-container">
-        <h3 style="text-align:center;color:white;"><b>s-<i>now</i></b></h3>
+  <body class="stile-main">
+    <div class="mdl-layout mdl-js-layout">
+      <header class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">s-<i><b>now</b></i></span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation -->
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="#">Home</a>
+            <a class="mdl-navigation__link" href="mappa.html">Mappa</a>
+            <a class="mdl-navigation__link" href="login.php">Accedi</a>
+            <a class="mdl-navigation__link" href="https://github.com/asdf1899/s-now">Github <i class="fa fa-github"></i></a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title stile-text-azzurro">s-<i>now</i></span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link stile-text-azzurro" href="#">Home</a>
+          <a class="mdl-navigation__link stile-text-azzurro" href="mappa.html">Mappa</a>
+          <a class="mdl-navigation__link stile-text-azzurro" href="login.php">Accedi</a>
+          <a class="mdl-navigation__link stile-text-azzurro" href="https://github.com/asdf1899/s-now">Github <i class="fa fa-github"></i></a>
+        </nav>
       </div>
-      <!-- w3-bar-block server per tenere la bar verticalmente-->
-      <div class="w3-bar-block">
-        <a href="#"
-          onclick="chiudiMenu()"
-          class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
-          <p>Home</p>
-        </a>
-        <a href="mappa.html"
-          onclick="chiudiMenu()"
-          class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
-          <p>Mappa</p>
-        </a>
-        <!--
-        <a href="#cose"
-          onclick="chiudiMenu()"
-          class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
-          <p>Cos'è?</p>
-        </a>
-        <a href="#situazione"
-          onclick="chiudiMenu()"
-          class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
-         <p>Situazione</p>
-        </a>
-        <a href="#consigli"
-          onclick="chiudiMenu()"
-          class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
-          <p>Consigli</p>
-        </a>
-        <a href="#gallery"
-          onclick="chiudiMenu()"
-          class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
-          <p>Gallery</p>
-        </a>
-        -->
-        <a href="login.php"
-          onclick="chiudiMenu()"
-          class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
-          <p>Accedi</p>
-        </a>
-        <a href="https://github.com/asdf1899/s-now"
-          class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
-          <p>GitHub <i class="fa fa-github"></i></p>
-        </a>
-      </div>
-    </nav>
-
-    <!-- =================================== Menu in alto per i disp. mobili ========================================= -->
-    <header class="w3-container w3-top w3-hide-large stile-main w3-xlarge w3-padding">
-      <button class="stile-small-round-button" onclick="apriMenu();">☰</button>
-      <span style="color:white">s-<i>now</i></span>
-    </header>
-
-    <!-- ================================== OPACITA' =================================================================
-    Overlay è l'effetto di "opacità" sui disp. piccoli quando si apre il menu
-    cursor:pointer cambia l'icona del cursore del mouse
-    -->
-    <div class="w3-overlay w3-hide-large" onclick="chiudiMenu()" style="cursor:pointer" id="opacita"></div>
-
-    <!-- ================================= CORPO  =======================================================
-        Contenuto della pagina
-        il margin left è a 340px per non sovrapporsi con la sidebar
-    -->
-    <div class="w3-main" style="margin-left:300px;">
-      <!-- Header -->
-      <div class="w3-container stile-main" style="padding-top:20%;text-align:center;padding-bottom:250px;height:100%" id="header">
-        <h1 class="stile-title w3-text-white">
-          s-<i>now</i>
-        </h1>
-
-        <h4 class="w3-text-white">
-          <i class="fa fa-snowflake-o"></i>
-          Snow not <b><i>now  </i></b>
-          <i class="fa fa-snowflake-o"></i>
-        </h4>
-        <br>
-        <button class="stile-bottone-generico stile-button" onclick="location.href='login.php'">Accedi</button>
-        <button class="stile-bottone-generico stile-button-fill" onclick="location.href='mappa.html'">Mappa</button>
-      </div>
-
-      <!-- Cos'è -->
-     <div class="w3-container stile-main" id="cose">
-       <div class="w3-card-4 w3-panel w3-round-xlarge stile-card" style="padding:50px;">
-         <h1 class="w3-xxxlarge w3-text-white"><b><i>Cos'è?</i></b></h1>
-         <hr style="width:100px;border:5px solid white" class="w3-round">
-         <p class="w3-left w3-text-white">
-           E' un prototipo di una webapp che consente di segnalare e quindi monitorare le strade ghiacciate o innevate in zona, al fine di evitare
-          possibili incidenti o quant'altro.<br>
-          Una volta effettuato il login, sarà possibile visualizzare una mappa sulla quale saranno indicati i tratti di
-          strada ghiacciati, innevati o particolarmente pericolosi segnalati dagli utenti stessi. Questa piattaforma in quale modo
-          potrà anche aiutare gli enti competenti alla pulizia stradale in quanto evidenzia i tratti stradali non ancora sgomberati.
-          </p>
-       </div>
-     </div>
-
-     <!-- Situazione -->
-     <div class="w3-container stile-main" id="situazione">
-       <div class="w3-card-4 w3-panel w3-round-xlarge stile-card">
-         <h1 class="w3-xxxlarge w3-text-white"><b><i>Situazione</i></b></h1>
-         <hr style="width:100px;border:5px solid white" class="w3-round">
-         <p class="w3-text-white">Alcuni link a notizie riguardanti l'emergenze di neve e ghiaccio in Italia e in particolare in Trentino.</p>
-         <br>
-         <table class="w3-table stile-table">
-          <thead>
-            <tr>
-              <th>Trentino</th>
-              <th>Italia</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="stile-td-link">
-                <a href="http://www.ladige.it/territori/trento/2017/12/05/emergenza-neve-citt-pronto-piano-comune">L'Adige</a>
-              </td>
-              <td class="stile-td-link">
-                <a href="http://www.repubblica.it/cronaca/2012/02/05/dirette/ghiaccio_e_neve_ancora_emergenza_le_previsioni_maltempo_diffuso_nevica_a_milano_e_alla_periferia_di_roma-29365747/">Repubblica</a>
-              </td>
-            </tr>
-            <tr>
-              <td class="stile-td-link">
-                <A href="http://www.lavocedeltrentino.it/2017/12/11/trento-emergenza-neve-strade-piene-pericoli-cittadini-lamentano-lentezza-inefficienza/">La voce del Trentino</a>
-              </td>
-              <td class="stile-td-link">
-                <a href="http://tg24.sky.it/cronaca/2017/12/10/maltempo-italia-neve-allerta-meteo.html">Sky Tg24</a>
-              </td>
-            </tr>
-            <tr>
-              <td class="stile-td-link">
-                <a href="http://www.giornaletrentino.it/cronaca/neve-ghiaccio-e-traffico-ore-d-emergenza-sulle-strade-del-trentino-1.1470571">Giornale Trentino</a>
-              </td>
-              <td class="stile-td-link">
-                <a href="http://www.milanotoday.it/cronaca/feriti-ghiaccio.html">Milano Today</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-       </div>
-     </div>
-
-     <!-- Consigli -->
-     <div class="w3-container stile-main" id="consigli">
-       <div class="stile-card w3-card-4 w3-panel w3-round-xlarge">
-         <h1 class="w3-xxxlarge w3-text-white"><b><i>Consigli</i></b></h1>
-         <hr style="width:100px;border:5px solid white" class="w3-round">
-         <p class="w3-text-white">
-           In caso di neve e ghiaccio, le condizioni stradali possono diventare rapidamente difficili, e quindi
-           è indispensabile seguire determinate regole per circolare senza problemi:
-         </p>
-         <br>
-         <ol class="w3-ul w3-left w3-text-white">
-           <li>1. Spostarsi solo con i veicoli dotati di pneumatici invernali.</li>
-           <li>2. Procedere a bassa velocità.</li>
-           <li>3. Nel caso ci si ritrovi incolonnati, lasciare un passaggio libero per i mezzi di pronto intervento.</li>
-           <li>4. Non sostare sotto gli alberi, in quanto è possibile la rottura dei rami per il peso della neve.</li>
-         </ul>
-       </div>
-     </div>
-
-     <!-- Gallery -->
-     <div class="w3-container stile-main" id="gallery">
-       <div class="stile-card w3-card-4 w3-panel w3-round-xlarge">
-         <h1 class="w3-xxxlarge w3-text-white"><b><i>Gallery</i></b></h1>
-         <hr style="width:100px;border:5px solid white" class="w3-round">
-         <p class="w3-text-white">
-           Incidenti causati da neve e ghiaccio sulle strade.
-         </p>
-         <br>
-         <div class="stile-gallery">
-           <img id="galleria" src="img/img0.jpg" style="width:100%;display:block;border-radius:15px;">
-         </div>
-         <script>slideImmagini()</script>
-       </div>
-     </div>
-     <!-- footer -->
-     <div class="stile-main" style="padding:16px;text-align:center;">
-       <div class="stile-footer">
-         <p class="w3-text-white"><i class="fa fa-code"></i> with <i class="fa fa-html5"></i> by Anas Araid <i class="fa fa-copyright"></i>2018</p>
-       </div>
-     </div>
-   </div>
+      <main class="mdl-layout__content">
+        <section id="header" class="stile-parent">
+          <div class="stile-child">
+            <h1 class="stile-testo-bianco stile-title">
+              s-<i>now</i>
+            </h1>
+            <h5 class="stile-testo-bianco">
+              <i class="fa fa-snowflake-o"></i>
+              Snow not <b><i>now</i></b>
+              <i class="fa fa-snowflake-o"></i>
+            </h5>
+            <button class="stile-bottone-generico stile-button" onclick="location.href='login.php'">Accedi</button>
+            <button class="stile-bottone-generico stile-button-fill" onclick="location.href='mappa.html'">Mappa</button>
+          </div>
+        </section>
+        <section>
+          <!-- COS'E'-->
+          <div id="cose" class="mdl-grid">
+            <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--middle mdl-shadow--16dp stile-card" style="border:none;border-radius:17px;">
+              <h1 class="stile-testo-bianco"><b><i>Cos'è?</i></b></h1>
+               <hr style="width:100px;border:5px solid white;border-radius:10px;background:white;">
+               <p class="stile-testo-bianco">
+                 E' un prototipo di una webapp che consente di segnalare e quindi monitorare le strade ghiacciate o innevate in zona, al fine di evitare
+                possibili incidenti o quant'altro.<br>
+                Una volta effettuato il login, sarà possibile visualizzare una mappa sulla quale saranno indicati i tratti di
+                strada ghiacciati, innevati o particolarmente pericolosi segnalati dagli utenti stessi. Questa piattaforma in quale modo
+                potrà anche aiutare gli enti competenti alla pulizia stradale in quanto evidenzia i tratti stradali non ancora sgomberati.
+                </p>
+            </div>
+          </div>
+          <!-- SITUAZIONE-->
+          <div id="situazione" class="mdl-grid">
+            <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--middle mdl-shadow--16dp stile-card" style="border:none;border-radius:17px;">
+              <h1 class="stile-testo-bianco"><b><i>Situazione</i></b></h1>
+               <hr style="width:100px;border:5px solid white;border-radius:10px;background:white;">
+               <p class="stile-testo-bianco">Alcuni link a notizie riguardanti l'emergenze di neve e ghiaccio in Italia e in particolare in Trentino.</p>
+               <br>
+               <table class="stile-table mdl-cell mdl-cell--12-col" style="height:auto">
+                <thead>
+                  <tr>
+                    <th>TRENTINO</th>
+                    <th>ITALIA</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="stile-td-link">
+                      <a href="http://www.ladige.it/territori/trento/2017/12/05/emergenza-neve-citt-pronto-piano-comune">L'Adige</a>
+                    </td>
+                    <td class="stile-td-link">
+                      <a href="http://www.repubblica.it/cronaca/2012/02/05/dirette/ghiaccio_e_neve_ancora_emergenza_le_previsioni_maltempo_diffuso_nevica_a_milano_e_alla_periferia_di_roma-29365747/">Repubblica</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="stile-td-link">
+                      <A href="http://www.lavocedeltrentino.it/2017/12/11/trento-emergenza-neve-strade-piene-pericoli-cittadini-lamentano-lentezza-inefficienza/">La voce del Trentino</a>
+                    </td>
+                    <td class="stile-td-link">
+                      <a href="http://tg24.sky.it/cronaca/2017/12/10/maltempo-italia-neve-allerta-meteo.html">Sky Tg24</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="stile-td-link">
+                      <a href="http://www.giornaletrentino.it/cronaca/neve-ghiaccio-e-traffico-ore-d-emergenza-sulle-strade-del-trentino-1.1470571">Giornale Trentino</a>
+                    </td>
+                    <td class="stile-td-link">
+                      <a href="http://www.milanotoday.it/cronaca/feriti-ghiaccio.html">Milano Today</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- CONSIGLI-->
+          <div id="consigli" class="mdl-grid">
+            <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--middle mdl-shadow--16dp stile-card" style="border:none;border-radius:17px;">
+              <h1 class="stile-testo-bianco"><b><i>Consigli</i></b></h1>
+               <hr style="width:100px;border:5px solid white;border-radius:10px;background:white;">
+               <p class="stile-testo-bianco">
+                 In caso di neve e ghiaccio, le condizioni stradali possono diventare rapidamente difficili, e quindi
+                 è indispensabile seguire determinate regole per circolare senza problemi:
+               </p>
+               <ol class="stile-testo-bianco">
+                 <li>1. Spostarsi solo con i veicoli dotati di pneumatici invernali.</li>
+                 <li>2. Procedere a bassa velocità.</li>
+                 <li>3. Nel caso ci si ritrovi incolonnati, lasciare un passaggio libero per i mezzi di pronto intervento.</li>
+                 <li>4. Non sostare sotto gli alberi, in quanto è possibile la rottura dei rami per il peso della neve.</li>
+               </ol>
+            </div>
+          </div>
+          <!-- GALLERY-->
+          <div id="gallery" class="mdl-grid">
+            <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--middle mdl-shadow--16dp stile-card" style="border:none;border-radius:17px;">
+              <h1 class="stile-testo-bianco"><b><i>Gallery</i></b></h1>
+               <hr style="width:100px;border:5px solid white;border-radius:10px;background:white;">
+               <p class="stile-testo-bianco">
+                  Incidenti causati da neve e ghiaccio sulle strade.
+                </p>
+                <br>
+                <div class="stile-gallery">
+                  <img id="galleria" src="img/img0.jpg" style="width:100%;display:block;border-radius:15px;">
+                </div>
+                <script>slideImmagini()</script>
+            </div>
+          </div>
+          <!-- footer -->
+          <div class="stile-main" style="padding:10px;text-align:center;">
+            <div class="stile-footer">
+             <p class="stile-testo-bianco"><i class="fa fa-code"></i> with <i class="fa fa-coffee"></i> by Anas Araid <i class="fa fa-copyright"></i> 2018</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
   </body>
+
 </html>

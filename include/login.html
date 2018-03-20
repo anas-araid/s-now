@@ -1,25 +1,83 @@
-<!-- Login -->
-<div class="w3-container stile-main" id="situazione" style="padding-top:100px;padding-bottom:72px;">
-  <div class="w3-card-4 w3-panel w3-round-xlarge stile-card">
-    <h1 class="w3-xxxlarge w3-text-white"><b><i>Login</i></b></h1>
-    <hr style="width:100px;border:5px solid white" class="w3-round">
-    <br>
-    <form action="" method="post" style="color:white;text-align:center">
-      <div class="w3-section">
-        <label>Email <i class="fa fa-envelope"></i></label>
-        <input style="color:white;background-color:rgba(255, 255, 255, 0.3);text-align:center;outline:none;border:none!important;"
-              class="w3-input w3-border w3-round-xxlarge" type="email" name="username" autofocus="" maxlength="50" required="">
-      </div>
-      <div class="w3-section">
-        <label>Password <i class="fa fa-lock"></i></label>
-        <input style="color:white;background-color:rgba(255, 255, 255, 0.3);text-align:center;outline:none;border:none!important;"
-               class="w3-input w3-border w3-round-xxlarge" type="password" name="password" required="" maxlength="20">
-      </div>
-      <button type="submit" class="stile-bottone-generico stile-button-fill" style="width:50%;">Accedi <i class="fa fa-sign-in"></i></button>
-    </form>
-    <p class="w3-text-white" style="text-align:center;margin:2%;">Oppure</p>
-    <div style="text-align:center;">
-      <button class="stile-bottone-generico stile-button-fill" style="width:50%;" onclick="location.href='signup.php'">Registrati</button>
+
+<div class="mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header mdl-layout__header--transparent">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">s-<i>now</i></span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation -->
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="index.html">Home</a>
+        <a class="mdl-navigation__link" href="mappa.html">Mappa</a>
+        <a class="mdl-navigation__link" href="#">Accedi</a>
+        <a class="mdl-navigation__link" href="https://github.com/asdf1899/s-now">Github <i class="fa fa-github"></i></a>
+      </nav>
     </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title stile-text-azzurro">s-<i>now</i></span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link stile-text-azzurro" href="index.html">Home</a>
+      <a class="mdl-navigation__link stile-text-azzurro" href="mappa.html">Mappa</a>
+      <a class="mdl-navigation__link stile-text-azzurro" href="#">Accedi</a>
+      <a class="mdl-navigation__link stile-text-azzurro" href="https://github.com/asdf1899/s-now">Github <i class="fa fa-github"></i></a>
+    </nav>
   </div>
+  <main class="mdl-layout__content">
+    <section>
+      <!-- login-->
+      <div id="cose" class="mdl-grid">
+        <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--middle mdl-shadow--16dp stile-card" style="border:none;border-radius:17px;">
+          <h1 class="stile-testo-bianco"><b><i>Accesso</i></b></h1>
+           <hr style="width:100px;border:5px solid white;border-radius:10px;background:white;">
+           <div class="mdl-card mdl-cell mdl-cell--7-col mdl-cell--middle mdl-shadow--4dp stile-card" style="text-align:center;background:rgba(255,255,255,0.7);border:none;border-radius:17px;">
+
+
+             <form action="" method="post">
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                 <input class="mdl-textfield__input" type="email" name="username" autofocus="" maxlength="50">
+                 <label class="mdl-textfield__label" for="username">Username...</label>
+               </div>
+               <br>
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                 <input class="mdl-textfield__input" type="password" name="password" id="password">
+                 <label class="mdl-textfield__label" for="password">Password...</label>
+               </div>
+               <br>
+
+
+               <!-- se non si aggiunge type="button", il pulsante non da effetto-->
+               <button id="signin" type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect stile-main"
+                       onclick="location.href='signin.php'">
+                <i class="fa fa-user-circle stile-testo-bianco"></i>
+               </button>
+               <!--Descrizione del pulsante registrati -->
+               <div class="mdl-tooltip mdl-tooltip--large" for="signin">
+                 REGISTRAZIONE
+               </div>
+
+
+               <!-- se non si aggiunge type="submit", il pulsante non da effetto-->
+                <button id="login" type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect stile-main">
+                 <i class="fa fa-angle-right stile-testo-bianco"></i>
+                </button>
+                <!--Descrizione del pulsante accedi -->
+                <div class="mdl-tooltip mdl-tooltip--large" for="login">
+                  ACCEDI
+                </div>
+
+             </form>
+
+           </div>
+        </div>
+      </div>
+      <!-- footer -->
+      <div class="stile-main" style="padding:10px;text-align:center;">
+        <div class="stile-footer">
+         <p class="stile-testo-bianco"><i class="fa fa-code"></i> with <i class="fa fa-coffee"></i> by Anas Araid <i class="fa fa-copyright"></i> 2018</p>
+        </div>
+      </div>
+    </section>
+  </main>
 </div>

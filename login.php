@@ -1,7 +1,6 @@
 <?php
   include 'php/functions.php';
   include "php/db_connection.php";
-
   session_start();
   $_SESSION["Nome"] = "";
   $_SESSION['isLogged'] = false;
@@ -44,19 +43,9 @@
     include "include/header.html";
    ?>
  </head>
-  <body>
-    <?php
-      include "include/sidebar.html";
-     ?>
-      <!-- ================================= CORPO  =======================================================
-        Contenuto della pagina
-        il margin left è a 340px per non sovrapporsi con la sidebar
-    -->
-    <div class="w3-main" style="margin-left:300px;">
+  <body class="stile-main">
       <?php
         include "include/login.html";
-        include "include/footer.html";
-       ?>
-    </div>
+        ?>
   </body>
 </html>

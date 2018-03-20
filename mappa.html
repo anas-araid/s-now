@@ -6,124 +6,80 @@
     <meta name="theme-color" content="#2173b9">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="css/reset.css" />
+    <link type="text/css" rel="stylesheet" href="css/material.min.css" />
     <link type="text/css" rel="stylesheet" href="css/style.css" />
-    <link type="text/css" rel="stylesheet" href="css/w3.css" />
     <link rel="stylesheet" href="css/font-awesome.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="js/material.js"></script>
     <script src="js/script.js"></script>
   </head>
-  <body>
-    <!-- ========================== SIDEBAR ==========================================================
-
-     w3-collapse nasconde la sidebar sui dispositivi mobili
-
-    -->
-    <nav id="menuLat" class="stile-azzurro w3-sidebar w3-collapse w3-large w3-top w3-padding" style="width:300px; z-index:3;font-weight:bold;">
-      <!-- w3-hide-large classe che nasconde un elemento sui dispositivi grandi -->
-      <button class="stile-small-round-button w3-hide-large" onclick="chiudiMenu()">X</button>
-      <div class="w3-container">
-        <h3 style="text-align:center;color:white;"><b>s-<i>now</i></b></h3>
-      </div>
-      <!-- w3-bar-block server per tenere la bar verticalmente-->
-      <div class="w3-bar-block">
-        <a href="index.html"
-         onclick="chiudiMenu()"
-         class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
-         <p>Home</p>
-        </a>
-        <a href="#"
-          onclick="chiudiMenu()"
-          class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
-          <p>Mappa</p>
-        </a>
-        <!--
-        <a href="index.html#cose"
-         onclick="chiudiMenu()"
-         class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
-         <p>Cos'è?</p>
-        </a>
-        <a href="index.html#situazione"
-         onclick="chiudiMenu()"
-         class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
-         <p>Situazione</p>
-        </a>
-        <a href="index.html#consigli"
-          onclick="chiudiMenu()"
-          class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
-          <p>Consigli</p>
-        </a>
-        <a href="index.html#gallery"
-          onclick="chiudiMenu()"
-          class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
-          <p>Gallery</p>
-        </a>
-        -->
-        <a href="login.php"
-          onclick="chiudiMenu()"
-          class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
-          <p>Accedi</p>
-        </a>
-        <a href="https://github.com/asdf1899/s-now"
-          class="stile-link w3-bar-item stile-bottone-generico w3-round-xxlarge">
-          <p>GitHub <i class="fa fa-github"></i></p>
-        </a>
-      </div>
-    </nav>
-
-    <!-- =================================== Menu in alto per i disp. mobili ========================================= -->
-    <header class="w3-container w3-top w3-hide-large stile-main w3-xlarge w3-padding">
-      <button class="stile-small-round-button w3-hide-large" onclick="apriMenu();">☰</button>
-      <span style="color:white">s-<i>now</i></span>
-    </header>
-
-    <!-- ================================== OPACITA' =================================================================
-
-    Overlay è l'effetto di "opacità" sui disp. piccoli quando si apre il menu
-    cursor:pointer cambia l'icona del cursore del mouse
-    -->
-    <div class="w3-overlay w3-hide-large" onclick="chiudiMenu()" style="cursor:pointer" id="opacita"></div>
-    <!-- ================================= CORPO  =======================================================
-        Contenuto della pagina
-        il margin left è a 340px per non sovrapporsi con la sidebar
-    -->
-    <div class="w3-main" style="margin-left:300px;">
-      <!-- Mappa -->
-      <div class="w3-container stile-main" id="mappa" style="padding-top:15%">
-        <div class="w3-card-4 w3-panel w3-round-xlarge stile-card">
-          <h1 class="w3-xxxlarge w3-text-white"><b><i>Mappa</i></b></h1>
-          <hr style="width:100px;border:5px solid white" class="w3-round">
-          <button class="stile-bottone-generico stile-button-fill"
-                  style="width:100%;margin:16px 0px;"
-                  onclick="location.href='login.html'">
-            Aggiungi una nuova segnalazione
-          </button>
-          <div id="mapdiv" style="height:50%;width:100%;"></div>
+  <body class="stile-main">
+    <div class="mdl-layout mdl-js-layout">
+      <header class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">s-<i>now</i></span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation -->
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="index.html">Home</a>
+            <a class="mdl-navigation__link" href="#">Mappa</a>
+            <a class="mdl-navigation__link" href="login.php">Accedi</a>
+            <a class="mdl-navigation__link" href="https://github.com/asdf1899/s-now">Github <i class="fa fa-github"></i></a>
+          </nav>
         </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title stile-text-azzurro">s-<i>now</i></span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link stile-text-azzurro" href="index.html">Home</a>
+          <a class="mdl-navigation__link stile-text-azzurro" href="#">Mappa</a>
+          <a class="mdl-navigation__link stile-text-azzurro" href="login.php">Accedi</a>
+          <a class="mdl-navigation__link stile-text-azzurro" href="https://github.com/asdf1899/s-now">Github <i class="fa fa-github"></i></a>
+        </nav>
       </div>
+      <main class="mdl-layout__content">
+        <section>
+          <!-- mappa-->
+          <div id="mappa" class="mdl-grid">
+            <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--middle mdl-shadow--16dp stile-card" style="border:none;border-radius:17px;">
+              <h1 class="stile-testo-bianco"><b><i>Mappa</i></b></h1>
+               <hr style="width:100px;border:5px solid white;border-radius:10px;background:white;">
 
-      <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
-      <script>
-        map = new OpenLayers.Map("mapdiv");
-        console.log(map);
-        map.addLayer(new OpenLayers.Layer.OSM());
-        var lonLat = new OpenLayers.LonLat(42.088,12.564)
-              .transform(
-                new OpenLayers.Projection("EPSG:3004"), // Sistema di riferimento
-                map.getProjectionObject() // Proiezione Mercatore
-              );
-        var zoom=16;
-        //marker
-        var markers = new OpenLayers.Layer.Markers( "Markers" );
-        map.addLayer(markers);
-        markers.addMarker(new OpenLayers.Marker(lonLat));
-        map.setCenter (lonLat, zoom);
-      </script>
-      <!-- footer -->
-      <div class="stile-main" style="padding:16px;text-align:center;">
-        <div class="stile-footer">
-          <p class="w3-text-white"><i class="fa fa-code"></i> with <i class="fa fa-html5"></i> by Anas Araid <i class="fa fa-copyright"></i>2018</p>
-        </div>
-      </div>
+               <button class="stile-bottone-generico stile-button-fill"
+                       style="width:100%;margin:16px 0px;"
+                       onclick="location.href='login.php'">
+                 Aggiungi una nuova segnalazione
+               </button>
+               <div id="mapdiv" style="height:50%;width:100%;"></div>
+               <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+               <script>
+               map = new OpenLayers.Map("mapdiv");
+               console.log(map);
+               map.addLayer(new OpenLayers.Layer.OSM());
+               var lonLat = new OpenLayers.LonLat(42.088,12.564)
+               .transform(
+                 new OpenLayers.Projection("EPSG:3004"), // Sistema di riferimento
+                 map.getProjectionObject() // Proiezione Mercatore
+               );
+               var zoom=16;
+               //marker
+               var markers = new OpenLayers.Layer.Markers( "Markers" );
+               map.addLayer(markers);
+               markers.addMarker(new OpenLayers.Marker(lonLat));
+               map.setCenter (lonLat, zoom);
+               </script>
+            </div>
+          </div>
+          <!-- footer -->
+          <div class="stile-main" style="padding:10px;text-align:center;">
+            <div class="stile-footer">
+             <p class="stile-testo-bianco"><i class="fa fa-code"></i> with <i class="fa fa-coffee"></i> by Anas Araid <i class="fa fa-copyright"></i> 2018</p>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
-  </body>
-</html>
+  <body>
+<html>
