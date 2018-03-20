@@ -21,7 +21,7 @@
           php_alert('Login corretto');
           $_SESSION['Nome'] = $ris['Nome'];
           $_SESSION['isLogged'] = true;
-          //header("location:dashboard.php");
+          header("location:dashboard.php");
         }
       }
       $_POST['username']="";

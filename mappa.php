@@ -1,18 +1,13 @@
 <!doctype>
 <html>
   <head>
-    <title>s-now</title>
-    <meta charset="utf-8"/>
-    <meta name="theme-color" content="#2173b9">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" rel="stylesheet" href="css/reset.css" />
-    <link type="text/css" rel="stylesheet" href="css/material.min.css" />
-    <link type="text/css" rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/font-awesome.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="js/material.js"></script>
-    <script src="js/script.js"></script>
-  </head>
+  <?php
+    include "include/header.html";
+    include 'php/functions.php';
+    session_start();
+    php_alert($_SESSION['Nome']);
+   ?>
+ </head>
   <body class="stile-main">
     <div class="mdl-layout mdl-js-layout">
       <header class="mdl-layout__header mdl-layout__header--transparent">
@@ -46,12 +41,16 @@
             <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--middle mdl-shadow--16dp stile-card" style="border:none;border-radius:17px;">
               <h1 class="stile-testo-bianco"><b><i>Mappa</i></b></h1>
                <hr style="width:100px;border:5px solid white;border-radius:10px;background:white;">
-
-               <button class="stile-bottone-generico stile-button-fill"
-                       style="width:100%;margin:16px 0px;"
-                       onclick="location.href='login.php'">
-                 Aggiungi una nuova segnalazione
-               </button>
+               <?php
+                if(!$_SESSION['isLogged']){
+                  echo "<script>document.getElementById('aggiungiSegnalazione')</script>";
+                }
+               ?>
+               <button id="aggiungiSegnalazione" class="stile-bottone-generico stile-button-fill"
+               style="width:100%;margin:16px 0px;"
+               onclick="location.href='login.php'">
+               Aggiungi una nuova segnalazione
+             </button>
                <div id="mapdiv" style="height:50%;width:100%;"></div>
                <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
                <script>
@@ -81,5 +80,5 @@
         </section>
       </main>
     </div>
-  <body>
-<html>
+  </body>
+</html>
