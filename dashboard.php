@@ -27,24 +27,24 @@
           <div class="mdl-layout-spacer"></div>
         </div>
       </header>
-      <div class="mdl-layout__drawer stile-main-vertical">
-        <div style="height:120px;text-align:center;">
+      <div class="mdl-layout__drawer stile-main-vertical" style="border:none">
+        <div style="height:120px;text-align:center;padding:20px;">
           <span class="mdl-layout-title mdl-color-text--white"><b>s-<i>now</i></b></span>
         </div>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="index.html">Home</a>
+          <a class="mdl-navigation__link" href="mappa.php">Mappa</a>
+          <a class="mdl-navigation__link" href="https://github.com/asdf1899/s-now">GitHub <i class="fa fa-github"></i></a>
+          <a class="mdl-navigation__link" href="php/logout.php">Esci</a>
         </nav>
       </div>
       <main class="mdl-layout__content">
         <div class="page-content">
           <section>
             <!-- Info-->
-            <div id="info" class="mdl-grid">
-              <div class="mdl-grid mdl-card mdl-cell mdl-cell--12-col mdl-cell--middle mdl-shadow--16dp mdl-color--white"
-                   style="border:none;border-radius:17px;padding:20px">
+            <div id="info">
+              <div class="mdl-grid mdl-card mdl-cell mdl-cell--12-col mdl-shadow--16dp mdl-color--white"
+                   style="border:none;border-radius:17px;padding:20px;">
                 <div class="mdl-cell--2-col" style="text-align:center">
                   <img src=" <?php echo $_SESSION['fotoProfilo'] ?>"
                        style="width:150px;height:150px;border-radius:20px;" />
@@ -56,7 +56,7 @@
                   </h1>
                    <hr class="stile-azzurro" style="width:100px;height:10px;border:5px solid white;border-radius:10px;">
                    <div class="mdl-grid">
-                     <div class="stile-dashboard-card mdl-cell mdl-cell--4-col mdl-card mdl-shadow--4dp mdl-color--white">
+                     <div class="stile-dashboard-card mdl-cell mdl-cell--4-col mdl-shadow--4dp mdl-color--white">
                        <p class="stile-text-azzurro">EMAIL</p>
                        <p>
                          <?php

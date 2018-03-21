@@ -2,7 +2,18 @@
   include 'php/functions.php';
   include "php/db_connection.php";
   session_start();
-  $_SESSION = array();
+  try{
+    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    // error_reporting per togliere il notice quando non trova isLogged
+    error_reporting(0);
+    if($_SESSION["isLogged"]){
+      header("location:dashboard.php");
+    }else{
+      $_SESSION = array();
+    }
+  }catch(Exception $e){
+  }
+
   if (!$error_message) {
     // isset ritorna true se una variabile è stata assegnata
     if (isset($_POST['username']) && isset($_POST['password'])){
