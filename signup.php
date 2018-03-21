@@ -23,10 +23,12 @@
               $directory = "uploads/";
               $fotoProfilo = $directory.basename($_FILES["fotoDaCaricare"]["name"]);
               $estensioneImg = strtolower(pathinfo($fotoProfilo, PATHINFO_EXTENSION));
+              $fotoProfilo = $directory.basename($email).".".$estensioneImg;
+              php_alert($fotoProfilo);
               // controlla se è realmente un immagine
               if($estensioneImg === "png" || $estensioneImg === "jpg" || $estensioneImg === "jpeg") {
-                // Controlla la dimensione dell'immagine < 500Kb
-                if ($_FILES["fotoDaCaricare"]["size"] > 500000) {
+                // Controlla la dimensione dell'immagine < 1mb
+                if ($_FILES["fotoDaCaricare"]["size"] > 1000000) {
                   php_alert("Immagine troppo grande");
                   $fotoProfilo = "default.png";
                 }else{
@@ -48,11 +50,13 @@
             try{
                 $insert = mysqli_query($db_conn, $query);
                 if ($insert==null)
-                    throw new exception ("Utente gi&agrave; esistente");
+                    throw new exception ("Utente già esistente");
                 php_alert('Registrazione completata');
                 $_SESSION['Nome'] = $nome;
+                $_SESSION['email'] = $email;
+                $_SESSION['fotoProfilo'] = $fotoProfilo;
                 $_SESSION['isLogged'] = true;
-                //header("Location: dashboard.php");
+                header("Location: dashboard.php");
             } catch (Exception $e){
                 $message = $e->getMessage();
                 php_alert($message);

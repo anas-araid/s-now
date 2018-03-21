@@ -130,6 +130,14 @@ input{
     background: -o-linear-gradient( to left, #1ad5ff, #2173b9);
     background: linear-gradient( to left , #1ad5ff, #2173b9);
   }
+.stile-main-vertical{
+    background: #2173b9;
+    background: -webkit-linear-gradient( 0deg, #03A9F4, #2173b9);
+    background: -moz-linear-gradient( 0deg, #03A9F4, #2173b9);
+    background: -ms-linear-gradient( 0deg, #03A9F4, #2173b9);
+    background: -o-linear-gradient( 0deg, #03A9F4, #2173b9);
+    background: linear-gradient(0deg, #03A9F4, #2173b9);
+  }
 .stile-testo-bianco{
   color: white;
 }
@@ -151,4 +159,13 @@ input{
   display:table;
   height: 100%;
   width: 100%;
+}
+.stile-dashboard-card{
+  border:none;
+  border-radius:17px;
+  padding:20px;
+  height: auto;
+}
+.stile-star-checked{
+  color: orange;
 }

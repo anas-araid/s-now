@@ -18,8 +18,10 @@
         $db_password = $ris['Password'];
         if ($db_username == $username && $db_password == text_filter_encrypt($password)) {
           php_alert('Login corretto');
-          $_SESSION['Nome'] = $ris['Nome'];
+          $_SESSION['nome'] = $ris['Nome'];
           $_SESSION['ID_utente'] = $ris['ID'];
+          $_SESSION['email'] = $ris['Email'];
+          $_SESSION['fotoProfilo'] = $ris['FotoProfilo'];
           $_SESSION['isLogged'] = true;
           header("location:dashboard.php");
         }
