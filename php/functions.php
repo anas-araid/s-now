@@ -17,4 +17,7 @@
     function php_alert($text){
       echo "<script>alert('".$text."')</script>";
     }
+    function php_log($text){
+      echo "<script>console.log('".$text."')</script>";
+    }
 ?>

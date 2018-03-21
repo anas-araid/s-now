@@ -18,15 +18,31 @@
             $residenza  = text_filter($_POST["residenza"]);
             $email      = text_filter_lowercase($_POST["email"]);
             $password   = text_filter_encrypt($_POST["password"]);
-            // da far funzionare
-            $fotoProfilo = text_filter($_POST["fotoProfilo"]);
-            if (!isset($fotoProfilo)){
-              $directory = "uploads/";
-              $file = $directory.basename($_FILES["fotoProfilo"]["name"]);
-              $target_file="";
-              $immagineConEstensione = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
+            if (isset($_FILES["fotoDaCaricare"])){
+              $directory = "uploads/";
+              $fotoProfilo = $directory.basename($_FILES["fotoDaCaricare"]["name"]);
+              $estensioneImg = strtolower(pathinfo($fotoProfilo, PATHINFO_EXTENSION));
+              // controlla se è realmente un immagine
+              if($estensioneImg === "png" || $estensioneImg === "jpg" || $estensioneImg === "jpeg") {
+                // Controlla la dimensione dell'immagine < 500Kb
+                if ($_FILES["fotoDaCaricare"]["size"] > 500000) {
+                  php_alert("Immagine troppo grande");
+                  $fotoProfilo = "default.png";
+                }else{
+                  if (!move_uploaded_file($_FILES["fotoDaCaricare"]["tmp_name"], $fotoProfilo)) {
+                      echo "Impossibile caricare l'immagine";
+                  }
+                }
+              } else {
+                  php_alert("Immagine non valida");
+                  $fotoProfilo = "default.png";
+              }
+            }else{
+              php_alert("Immagine non valida, utilizzare solamente il formato png e jpg");
+              $fotoProfilo = "default.png";
             }
+            $_SESSION['fotoProfilo'] = $fotoProfilo;
             $query = "INSERT INTO t_utenti (Nome, Cognome, DataDiNascita, Genere, Residenza, FotoProfilo, Email, Password)
                       VALUES('$nome', '$cognome', '$data', '$genere', '$residenza', '$fotoProfilo', '$email', '$password')";
             try{
@@ -36,9 +52,10 @@
                 php_alert('Registrazione completata');
                 $_SESSION['Nome'] = $nome;
                 $_SESSION['isLogged'] = true;
-                //header("Location: index.php");
+                //header("Location: dashboard.php");
             } catch (Exception $e){
                 $message = $e->getMessage();
+                php_alert($message);
             }
         }
     }
@@ -52,19 +69,7 @@
  </head>
   <body class="stile-main">
     <?php
-      include "include/signin.html";
+      include "include/signup.html";
     ?>
-    <script>
-       var password          = document.getElementById("password");
-       var conferma_password = document.getElementById("confermaPassword");
-       function validaPassword() {
-           if (password.value != conferma_password.value)
-               conferma_password.setCustomValidity("Le password non corrispondono!");
-           else
-               conferma_password.setCustomValidity("");
-       }
-       password.onchange         = validaPassword;
-       conferma_password.onkeyup = validaPassword;
-   </script>
   </body>
 </html>

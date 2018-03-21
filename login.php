@@ -2,8 +2,7 @@
   include 'php/functions.php';
   include "php/db_connection.php";
   session_start();
-  $_SESSION["Nome"] = "";
-  $_SESSION['isLogged'] = false;
+  $_SESSION = array();
   if (!$error_message) {
     // isset ritorna true se una variabile è stata assegnata
     if (isset($_POST['username']) && isset($_POST['password'])){
@@ -20,6 +19,7 @@
         if ($db_username == $username && $db_password == text_filter_encrypt($password)) {
           php_alert('Login corretto');
           $_SESSION['Nome'] = $ris['Nome'];
+          $_SESSION['ID_utente'] = $ris['ID'];
           $_SESSION['isLogged'] = true;
           header("location:dashboard.php");
         }

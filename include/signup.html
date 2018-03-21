@@ -32,7 +32,7 @@
           <h1 class="stile-testo-bianco"><b><i>Registrazione</i></b></h1>
            <hr style="width:100px;border:5px solid white;border-radius:10px;background:white;">
            <div class="mdl-card mdl-cell mdl-cell--7-col mdl-cell--middle mdl-shadow--4dp stile-card" style="text-align:center;background:rgba(255,255,255,0.7);border:none;border-radius:17px;">
-             <form action="" method="post">
+             <form action="" method="post" enctype="multipart/form-data">
 
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                  <input class="mdl-textfield__input" type="text" id="nome" name="nome" required="" maxlength="50">
@@ -59,12 +59,13 @@
                <br>
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                  <input class="mdl-textfield__input" type="text" id="residenza" name="residenza" required="" maxlength="100">
-                 <label class="mdl-textfield__label" for="residenza">Residenza...</label>
+                 <label class="mdl-textfield__label" for="residenza">Comune di residenza...</label>
                </div>
                <br>
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                 <input class="mdl-textfield__input" type="file" name="fotoProfilo" id="fotoProfilo">
-                 <label class="mdl-textfield__label" for="fotoProfilo"></label>
+                 <label class="mdl-textfield__label mdl-color-text--blue" for="fotoDaCaricare">Foto profilo</label>
+                 <br>
+                 <input class="mdl-textfield__input" type="file" name="fotoDaCaricare">
                </div>
                <br>
                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -94,16 +95,14 @@
                  INDIETRO
                </div>
 
-               <button id="signin" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect stile-main"
+               <button id="signup" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect stile-main"
                         type="submit">
                 <i class="fa fa-user-circle stile-testo-bianco"></i>
                </button>
                <!--Descrizione del pulsante registrati -->
-               <div class="mdl-tooltip mdl-tooltip--large" for="signin">
+               <div class="mdl-tooltip mdl-tooltip--large" for="signup">
                  REGISTRATI
                </div>
-
-
              </form>
            </div>
         </div>
@@ -115,5 +114,19 @@
         </div>
       </div>
     </section>
+    <script>
+       var password          = document.getElementById("password");
+       var conferma_password = document.getElementById("confermaPassword");
+       //var registrati        = document.getElementById("signup");
+       function validaPassword() {
+           if (password.value != conferma_password.value){
+             conferma_password.setCustomValidity("Le password non corrispondono o la lunghezza è insufficiente");
+           }else{
+             conferma_password.setCustomValidity("");
+           }
+       }
+       password.onchange         = validaPassword;
+       conferma_password.onkeyup = validaPassword;
+    </script>
   </main>
 </div>
