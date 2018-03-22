@@ -177,3 +177,17 @@ input{
 .mdl-navigation__link:hover{
   background-color: #2173b9!important;
 }
+.stile-image-parallax{;
+  background-image: url("../img/parallax.jpg");
+  height: auto;
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (max-width: 600px) {
+    .stile-image-parallax {
+        background: linear-gradient( to left , #1ad5ff, #2173b9);
+    }
+}
