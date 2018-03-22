@@ -1,3 +1,6 @@
+body, h1, h2, h3, h4, h5, h6, p, a{
+  font-family: 'Quicksand', sans-serif;;
+}
 button.stile-small-round-button {
   width: 40px;
   height: 40px;
@@ -167,4 +170,10 @@ input{
 }
 .stile-star-checked{
   color: orange;
+}
+.mdl-navigation__link{
+  color:white!important;
+}
+.mdl-navigation__link:hover{
+  background-color: #2173b9!important;
 }

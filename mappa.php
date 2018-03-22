@@ -5,7 +5,6 @@
     include "include/header.html";
     include 'php/functions.php';
     session_start();
-    php_alert($_SESSION['Nome']);
    ?>
  </head>
   <body class="stile-main">
@@ -25,8 +24,8 @@
           </nav>
         </div>
       </header>
-      <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title stile-text-azzurro">s-<i>now</i></span>
+      <div class="mdl-layout__drawer stile-main-vertical" style="border:none">
+        <span class="mdl-layout-title mdl-color-text--white">s-<i>now</i></span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link stile-text-azzurro" href="index.html">Home</a>
           <a class="mdl-navigation__link stile-text-azzurro" href="#">Mappa</a>

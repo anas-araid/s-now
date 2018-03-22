@@ -6,6 +6,9 @@
     include 'php/functions.php';
     include 'php/get_user_data.php';
     session_start();
+    // Controlla se la foto profilo esiste, altrimenti usa quella default
+    $_SESSION['fotoProfilo'] = profilePicture($_SESSION['fotoProfilo']);
+    // getUserData ritorna un array con tutte le info dell'utente
     $user = getUserData($_SESSION['email']);
     if(!$_SESSION['isLogged'] or $_SESSION['isLogged'] == ""){
       session_destroy();
@@ -19,10 +22,10 @@
    </style>
  </head>
 
-  <body class="mdl-color--grey-200">
+  <body class="mdl-color--grey-100">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
                 mdl-layout--fixed-header">
-      <header class="mdl-layout__header mdl-color--grey-200">
+      <header class="mdl-layout__header mdl-color--grey-100">
         <div class="mdl-layout__header-row">
           <div class="mdl-layout-spacer"></div>
         </div>
@@ -43,18 +46,18 @@
           <section>
             <!-- Info-->
             <div id="info">
-              <div class="mdl-grid mdl-card mdl-cell mdl-cell--12-col mdl-shadow--16dp mdl-color--white"
+              <div class="mdl-grid mdl-card mdl-cell mdl-cell--12-col mdl-shadow--4dp mdl-color--white"
                    style="border:none;border-radius:17px;padding:20px;">
                 <div class="mdl-cell--2-col" style="text-align:center">
                   <img src=" <?php echo $_SESSION['fotoProfilo'] ?>"
-                       style="width:150px;height:150px;border-radius:20px;" />
+                       style="width:120px;height:120px;border-radius:50%;" />
                 </div>
                 <div class="mdl-cell--1-col"></div>
                 <div class="mdl-cell--9-col">
-                  <h1 class="stile-text-azzurro">
-                    <b><i>Ciao <?php echo $_SESSION['nome'] ?></i></b>
-                  </h1>
-                   <hr class="stile-azzurro" style="width:100px;height:10px;border:5px solid white;border-radius:10px;">
+                  <h2 class="asdf stile-text-azzurro ">
+                    Ciao <?php echo $_SESSION['Nome'] ?>
+                  </h2>
+                   <hr class="stile-azzurro" style="width:100px;height:8px;border:5px solid white;border-radius:10px;">
                    <div class="mdl-grid">
                      <div class="stile-dashboard-card mdl-cell mdl-cell--4-col mdl-shadow--4dp mdl-color--white">
                        <p class="stile-text-azzurro">EMAIL</p>
@@ -64,7 +67,7 @@
                          ?>
                        </p>
                      </div>
-                     <div class="stile-dashboard-card mdl-cell mdl-cell--4-col mdl-card mdl-shadow--4dp mdl-color--white">
+                     <div class="stile-dashboard-card mdl-cell mdl-cell--4-col mdl-shadow--4dp mdl-color--white">
                        <p class="stile-text-azzurro">CITTA'</p>
                        <p>
                          <?php
@@ -72,7 +75,7 @@
                          ?>
                        </p>
                      </div>
-                     <div class="stile-dashboard-card mdl-cell mdl-cell--4-col mdl-card mdl-shadow--4dp mdl-color--white">
+                     <div class="stile-dashboard-card mdl-cell mdl-cell--4-col mdl-shadow--4dp mdl-color--white">
                        <p class="stile-text-azzurro">VALUTAZIONE</p>
                        <p>
                          <?php

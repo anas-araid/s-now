@@ -20,4 +20,13 @@
     function php_log($text){
       echo "<script>console.log('".$text."')</script>";
     }
+    function profilePicture($filePath){
+      include "php/db_connection.php";
+      // Controlla se la foto profilo esiste, altrimenti usa quella default
+      $default = 'uploads/default.png';
+      if (!file_exists($filePath)) {
+        return $default;
+      }
+      return $filePath;
+    }
 ?>

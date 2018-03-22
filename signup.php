@@ -30,7 +30,7 @@
                 // Controlla la dimensione dell'immagine < 1mb
                 if ($_FILES["fotoDaCaricare"]["size"] > 1000000) {
                   php_alert("Immagine troppo grande");
-                  $fotoProfilo = "default.png";
+                  $fotoProfilo = "uploads/default.png";
                 }else{
                   if (!move_uploaded_file($_FILES["fotoDaCaricare"]["tmp_name"], $fotoProfilo)) {
                       echo "Impossibile caricare l'immagine";
@@ -38,11 +38,11 @@
                 }
               } else {
                   php_alert("Immagine non valida");
-                  $fotoProfilo = "default.png";
+                  $fotoProfilo = "uploads/default.png";
               }
             }else{
               php_alert("Immagine non valida, utilizzare solamente il formato png e jpg");
-              $fotoProfilo = "default.png";
+              $fotoProfilo = "uploads/default.png";
             }
             $_SESSION['fotoProfilo'] = $fotoProfilo;
             $query = "INSERT INTO t_utenti (Nome, Cognome, DataDiNascita, Genere, Residenza, FotoProfilo, Email, Password)
