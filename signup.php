@@ -24,7 +24,6 @@
               $fotoProfilo = $directory.basename($_FILES["fotoDaCaricare"]["name"]);
               $estensioneImg = strtolower(pathinfo($fotoProfilo, PATHINFO_EXTENSION));
               $fotoProfilo = $directory.basename($email).".".$estensioneImg;
-              php_alert($fotoProfilo);
               // controlla se è realmente un immagine
               if($estensioneImg === "png" || $estensioneImg === "jpg" || $estensioneImg === "jpeg") {
                 // Controlla la dimensione dell'immagine < 1mb
