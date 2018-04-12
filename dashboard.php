@@ -19,6 +19,12 @@
     .mdl-layout__drawer-button{
       color: #2173b9!important;
     }
+    .mdl-fab-bottom-right {
+      position: fixed;
+      bottom: 24px;
+    	right: 24px;
+    	transition: bottom .25s cubic-bezier(0,0,.2,1);
+    }
    </style>
  </head>
 
@@ -106,37 +112,56 @@
         </section>
         <!-- INFO UTENTE PER MOBILE-->
         <section>
+          <script>
+            $(document).ready(() => {
+                nitemarket.MaterialUtils.activateExpandableFAB();
+            });
+          </script>
           <div id="info-mobile" class="mdl-grid mdl-cell--hide-desktop">
             <div class="mdl-card mdl-grid mdl-cell mdl-cell--12-col mdl-cell--middle mdl-shadow--4dp mdl-color--white"
-                 style="border:none;border-radius:17px;padding:5px;margin-top:20px">
+                 style="border:none;border-radius:17px;margin-top:20px">
               <div class="mdl-cell mdl-cell--12-col">
                 <h2 class="stile-text-azzurro ">
                   Ciao <?php echo $_SESSION['Nome'] ?>
                 </h2>
                 <hr class="stile-azzurro" style="width:100px;height:8px;border:5px solid white;border-radius:10px;">
               </div>
-              <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--2-col">
+            </div>
+            <div class="mdl-fab-bottom-right mdl-button--fab-expandable bottom right mdl-fab-expandable--snack">
+              <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--blue">
+                <i class="material-icons">more_vert</i>
+              </button>
+              <div class="mdl-fab-expandable--children">
+                <div class="mdl-fab-expandable--child">
                   <button id="button-settings-mobile"
-                          class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--blue">
-                    <i class="material-icons">settings</i>
+                          class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--orange">
+                    <i class="material-icons">account_circle</i>
                   </button>
-                  <!--Descrizione del pulsante mostra utente -->
-                  <div class="mdl-tooltip mdl-tooltip--large" for="button-settings-mobile">
-                    Mostra Utente
-                  </div>
-                </div>
-                <div class="mdl-cell mdl-cell--2-col">
                   <button id="button-chat-mobile"
                           class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--green">
                       <i class="material-icons">chat</i>
+                  </button>
+
+                  <button id="button-maps-mobile"
+                          class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--red">
+                      <i class="material-icons">add_location</i>
                   </button>
                   <!--Descrizione del pulsante mostra chat -->
                   <div class="mdl-tooltip mdl-tooltip--large" for="button-chat-mobile">
                     Chat
                   </div>
+                  <!--Descrizione del pulsante mostra utente -->
+                  <div class="mdl-tooltip mdl-tooltip--large" for="button-settings-mobile">
+                    Account
+                  </div>
+                  <!--Descrizione del pulsante mostra chat -->
+                  <div class="mdl-tooltip mdl-tooltip--large" for="button-maps-mobile">
+                    Aggiungi segnalazione
+                  </div>
                 </div>
+              </div>
             </div>
+
           </div>
         </section>
       </main>
