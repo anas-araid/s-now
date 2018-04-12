@@ -137,26 +137,26 @@
                           class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--orange">
                     <i class="material-icons">account_circle</i>
                   </button>
+                  <div class="mdl-fab-expandable--child-label mdl-color-text--orange">
+                    <label>Account</label>
+                  </div>
+                </div>
+                <div class="mdl-fab-expandable--child">
                   <button id="button-chat-mobile"
                           class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--green">
                       <i class="material-icons">chat</i>
                   </button>
-
+                  <div class="mdl-fab-expandable--child-label mdl-color-text--green">
+                    <label>Chat</label>
+                  </div>
+                </div>
+                <div class="mdl-fab-expandable--child">
                   <button id="button-maps-mobile"
                           class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--red">
                       <i class="material-icons">add_location</i>
                   </button>
-                  <!--Descrizione del pulsante mostra chat -->
-                  <div class="mdl-tooltip mdl-tooltip--large" for="button-chat-mobile">
-                    Chat
-                  </div>
-                  <!--Descrizione del pulsante mostra utente -->
-                  <div class="mdl-tooltip mdl-tooltip--large" for="button-settings-mobile">
-                    Account
-                  </div>
-                  <!--Descrizione del pulsante mostra chat -->
-                  <div class="mdl-tooltip mdl-tooltip--large" for="button-maps-mobile">
-                    Aggiungi segnalazione
+                  <div class="mdl-fab-expandable--child-label mdl-color-text--red">
+                    <label>Nuova segnalazione</label>
                   </div>
                 </div>
               </div>
