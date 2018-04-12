@@ -17,7 +17,7 @@
    ?>
    <style>
     .mdl-layout__drawer-button{
-      color: black!important;
+      color: #2173b9!important;
     }
    </style>
  </head>
@@ -41,19 +41,29 @@
         </nav>
       </div>
       <main class="mdl-layout__content">
+        <!-- INFO UTENTE PER DESKTOP-->
         <section class="stile-image-parallax">
-          <!-- Info-->
-          <div id="info" class="mdl-grid">
+          <div id="info-desktop" class="mdl-grid mdl-cell--hide-phone mdl-cell--hide-tablet">
             <br>
             <div class="mdl-grid mdl-card mdl-cell mdl-cell--12-col mdl-cell--middle mdl-shadow--4dp mdl-color--white"
-                 style="border:none;border-radius:17px;padding:20px;margin-top:10px">
+                 style="border:none;border-radius:17px;padding:20px;margin-top:20px">
               <div class="mdl-cell--2-col" style="text-align:center">
                 <img src=" <?php echo $_SESSION['fotoProfilo'] ?>"
-                     style="width:120px;height:120px;border-radius:50%;" />
+                     style="width:120px;height:120px;border-radius:50%;">
+                </img>
+               <div style="margin:50px">
+                 <button id="button-settings" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--blue">
+                   <i class="material-icons">settings</i>
+                 </button>
+                 <!--Descrizione del pulsante mostra utente -->
+                 <div class="mdl-tooltip mdl-tooltip--large" for="button-settings">
+                   Mostra Utente
+                 </div>
+               </div>
               </div>
               <div class="mdl-cell--1-col"></div>
               <div class="mdl-cell--9-col">
-                <h2 class="asdf stile-text-azzurro ">
+                <h2 class="stile-text-azzurro ">
                   Ciao <?php echo $_SESSION['Nome'] ?>
                 </h2>
                  <hr class="stile-azzurro" style="width:100px;height:8px;border:5px solid white;border-radius:10px;">
@@ -93,12 +103,41 @@
               </div>
             </div>
           </div>
-          <!-- footer
-          <div class="stile-main" style="padding:10px;text-align:center;">
-            <div class="stile-footer">
-             <p class="stile-testo-bianco"><i class="fa fa-code"></i> with <i class="fa fa-coffee"></i> by Anas Araid <i class="fa fa-copyright"></i> 2018</p>
+        </section>
+        <!-- INFO UTENTE PER MOBILE-->
+        <section>
+          <div id="info-mobile" class="mdl-grid mdl-cell--hide-desktop">
+            <div class="mdl-card mdl-grid mdl-cell mdl-cell--12-col mdl-cell--middle mdl-shadow--4dp mdl-color--white"
+                 style="border:none;border-radius:17px;padding:5px;margin-top:20px">
+              <div class="mdl-cell mdl-cell--12-col">
+                <h2 class="stile-text-azzurro ">
+                  Ciao <?php echo $_SESSION['Nome'] ?>
+                </h2>
+                <hr class="stile-azzurro" style="width:100px;height:8px;border:5px solid white;border-radius:10px;">
+              </div>
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--2-col">
+                  <button id="button-settings-mobile"
+                          class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--blue">
+                    <i class="material-icons">settings</i>
+                  </button>
+                  <!--Descrizione del pulsante mostra utente -->
+                  <div class="mdl-tooltip mdl-tooltip--large" for="button-settings-mobile">
+                    Mostra Utente
+                  </div>
+                </div>
+                <div class="mdl-cell mdl-cell--2-col">
+                  <button id="button-chat-mobile"
+                          class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--green">
+                      <i class="material-icons">chat</i>
+                  </button>
+                  <!--Descrizione del pulsante mostra chat -->
+                  <div class="mdl-tooltip mdl-tooltip--large" for="button-chat-mobile">
+                    Chat
+                  </div>
+                </div>
             </div>
-          </div>-->
+          </div>
         </section>
       </main>
     </div>

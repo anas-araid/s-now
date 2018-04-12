@@ -186,9 +186,10 @@ input{
   background-repeat: no-repeat;
   background-size: cover;
 }
-/* Nei dispositivi mobile il parallax non funziona, quindi mette il gradient*/
+/* Nei dispositivi mobile il parallax non funziona, quindi mette il gradient
 @media (max-width: 600px) {
     .stile-image-parallax {
         background: linear-gradient( to left , #1ad5ff, #2173b9);
     }
 }
+*/
