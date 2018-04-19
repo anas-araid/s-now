@@ -67,7 +67,7 @@
         Mappa
       </h2>
        <hr class="stile-azzurro" style="width:100px;height:8px;border:5px solid white;border-radius:10px;">
-       
+
     </div>
     <div class="mdl-card mdl-cell mdl-cell--4col mdl-shadow--4dp mdl-color--white stile-card-corners">
       <h2 class="stile-text-azzurro ">
