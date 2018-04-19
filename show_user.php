@@ -51,7 +51,7 @@
           <div class="mdl-cell mdl-cell--1-col"></div>
           <div class="mdl-card mdl-cell mdl-cell--10-col mdl-cell--middle mdl-shadow--4dp mdl-color--white stile-card-corners">
             <h2 class="stile-text-azzurro ">
-              Dettagli utente
+              Dettagli
             </h2>
             <hr class="stile-azzurro" style="width:100px;height:8px;border:5px solid white;border-radius:10px;">
 
@@ -128,7 +128,7 @@
           <div class="mdl-fab-expandable--children">
 
             <div class="mdl-fab-expandable--child">
-              <button id="button-settings-mobile"
+              <button id="button-dashboard"
                       class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--green"
                       onclick="location.href='dashboard.php'">
                 <i class="material-icons">dashboard</i>
@@ -139,7 +139,7 @@
             </div>
 
             <div class="mdl-fab-expandable--child">
-              <button id="button-settings-mobile"
+              <button id="button-edit"
                       class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--orange"
                       onclick="location.href='edit_user.php'">
                 <i class="material-icons">mode_edit</i>
@@ -150,9 +150,8 @@
             </div>
 
             <div class="mdl-fab-expandable--child">
-              <button id="button-settings-mobile"
-                      class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--red"
-                      onclick="location.href='delete_user.php'">
+              <button id="button-delete"
+                      class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--red">
                 <i class="material-icons">delete_forever</i>
               </button>
               <div class="mdl-fab-expandable--child-label mdl-color-text--red">
@@ -160,10 +159,65 @@
               </div>
             </div>
 
+
+
+            <!--
+            <dialog class="mdl-dialog">
+              <h4 class="mdl-dialog__title mdl-color--text-blue">Sei sicuro?</h4>
+              <div class="mdl-dialog__content">
+                <p>
+                  Perderai tutti i dati relativi al tuo account
+                </p>
+              </div>
+              <div class="mdl-dialog__actions">
+                <button type="button" class="mdl-button mdl-color--red">Continua</button>
+                <button type="button" class="mdl-button close">Annulla</button>
+              </div>
+            </dialog>
+            <script>
+              var dialog = document.querySelector('dialog');
+              var showDialogButton = document.querySelector('#button-delete');
+              if (! dialog.showModal) {
+                dialogPolyfill.registerDialog(dialog);
+              }
+              showDialogButton.addEventListener('click', function() {
+                dialog.showModal();
+              });
+              dialog.querySelector('.close').addEventListener('click', function() {
+                dialog.close();
+              });
+            </script>-->
+
+
           </div>
         </div>
 
       </main>
+      <dialog class="mdl-dialog stile-card-corners">
+        <h4 class="mdl-dialog__title mdl-color-text--blue">Sei sicuro?</h4>
+        <div class="mdl-dialog__content">
+          <p>
+            Perderai tutti i dati relativi al tuo account
+          </p>
+        </div>
+        <div class="mdl-dialog__actions">
+          <button type="button" class="mdl-button mdl-color--red mdl-color-text--white" style="border-radius:30px;">Continua</button>
+          <button type="button" class="mdl-button close mdl-color-text--blue" style="border-radius:30px;">Annulla</button>
+        </div>
+      </dialog>
+      <script>
+        var dialog = document.querySelector('dialog');
+        var showDialogButton = document.querySelector('#button-delete');
+        if (! dialog.showModal) {
+          dialogPolyfill.registerDialog(dialog);
+        }
+        showDialogButton.addEventListener('click', function() {
+          dialog.showModal();
+        });
+        dialog.querySelector('.close').addEventListener('click', function() {
+          dialog.close();
+        });
+      </script>
     </div>
   </body>
 </html>

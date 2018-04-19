@@ -13,7 +13,7 @@ function getUserData($email){
       $user['ID'] = $ris['ID'];
       $user['Nome'] = $ris['Nome'];
       $user['Cognome'] = $ris['Cognome'];
-      $user['DataDiNascita'] = $ris['DataDiNascita'];
+      $user['DataDiNascita'] = date('d-m-Y', strtotime($ris['DataDiNascita']));
       $user['Genere'] = $ris['Genere'];
       $user['Residenza'] = $ris['Residenza'];
       $user['FotoProfilo'] = $ris['FotoProfilo'];
