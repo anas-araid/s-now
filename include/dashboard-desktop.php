@@ -7,7 +7,8 @@
              style="width:120px;height:120px;border-radius:50%;">
         </img>
        <div style="margin:50px">
-         <button id="button-settings" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--blue">
+         <button id="button-settings" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--blue"
+                 onclick="location.href='show_user.php'">
            <i class="material-icons">settings</i>
          </button>
          <!--Descrizione del pulsante mostra utente -->
@@ -66,7 +67,7 @@
         Mappa
       </h2>
        <hr class="stile-azzurro" style="width:100px;height:8px;border:5px solid white;border-radius:10px;">
-
+       
     </div>
     <div class="mdl-card mdl-cell mdl-cell--4col mdl-shadow--4dp mdl-color--white stile-card-corners">
       <h2 class="stile-text-azzurro ">

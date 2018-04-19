@@ -3,7 +3,7 @@
       nitemarket.MaterialUtils.activateExpandableFAB();
   });
 </script>
-<div id="info-mobile" class="mdl-grid">
+<div id="info-mobile" class="mdl-grid mdl-cell--hide-desktop">
   <div class="mdl-card mdl-grid mdl-cell mdl-cell--12-col mdl-cell--middle mdl-shadow--4dp mdl-color--white stile-card-corners">
     <div class="mdl-cell mdl-cell--12-col">
       <h2 class="stile-text-azzurro ">
@@ -19,7 +19,8 @@
     <div class="mdl-fab-expandable--children">
       <div class="mdl-fab-expandable--child">
         <button id="button-settings-mobile"
-                class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--orange">
+                class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--orange"
+                onclick="location.href='show_user.php'">
           <i class="material-icons">account_circle</i>
         </button>
         <div class="mdl-fab-expandable--child-label mdl-color-text--orange">
