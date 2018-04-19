@@ -10,9 +10,8 @@
       $_SESSION['fotoProfilo'] = profilePicture($_SESSION['email'], $_SESSION['fotoProfilo']);
       // getUserData ritorna un array con tutte le info dell'utente
       $user = getUserData($_SESSION['email']);
-      if(!$_SESSION['isLogged'] or $_SESSION['isLogged'] == ""){
-        session_destroy();
-        header("location:login.php");
+      if ($user['ID'] == null){
+        header("location:php/logout.php");
       }
      ?>
      <style>
@@ -158,37 +157,6 @@
                 <label>Elimina</label>
               </div>
             </div>
-
-
-
-            <!--
-            <dialog class="mdl-dialog">
-              <h4 class="mdl-dialog__title mdl-color--text-blue">Sei sicuro?</h4>
-              <div class="mdl-dialog__content">
-                <p>
-                  Perderai tutti i dati relativi al tuo account
-                </p>
-              </div>
-              <div class="mdl-dialog__actions">
-                <button type="button" class="mdl-button mdl-color--red">Continua</button>
-                <button type="button" class="mdl-button close">Annulla</button>
-              </div>
-            </dialog>
-            <script>
-              var dialog = document.querySelector('dialog');
-              var showDialogButton = document.querySelector('#button-delete');
-              if (! dialog.showModal) {
-                dialogPolyfill.registerDialog(dialog);
-              }
-              showDialogButton.addEventListener('click', function() {
-                dialog.showModal();
-              });
-              dialog.querySelector('.close').addEventListener('click', function() {
-                dialog.close();
-              });
-            </script>-->
-
-
           </div>
         </div>
 
@@ -201,7 +169,10 @@
           </p>
         </div>
         <div class="mdl-dialog__actions">
-          <button type="button" class="mdl-button mdl-color--red mdl-color-text--white" style="border-radius:30px;">Continua</button>
+          <button type="button"
+                  class="mdl-button mdl-color--red mdl-color-text--white"
+                  style="border-radius:30px;"
+                  onclick="location.href='php/delete_user.php'">Continua</button>
           <button type="button" class="mdl-button close mdl-color-text--blue" style="border-radius:30px;">Annulla</button>
         </div>
       </dialog>

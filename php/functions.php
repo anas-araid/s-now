@@ -26,7 +26,6 @@
       $default = 'uploads/default.png';
       if (!file_exists($filePath)) {
         $sql = "UPDATE t_utenti SET FotoProfilo = '$default' WHERE Email = '$email' ";
-        echo $sql;
         $update = mysqli_query($db_conn, $sql);
         return $default;
       }

@@ -10,9 +10,9 @@
     $_SESSION['fotoProfilo'] = profilePicture($_SESSION['email'], $_SESSION['fotoProfilo']);
     // getUserData ritorna un array con tutte le info dell'utente
     $user = getUserData($_SESSION['email']);
-    if(!$_SESSION['isLogged'] or $_SESSION['isLogged'] == ""){
+    if(!$_SESSION['isLogged'] or $_SESSION['isLogged'] == "" or $user['ID'] == null){
       session_destroy();
-      header("location:login.php");
+      header("location:php/logout.php");
     }
    ?>
    <style>
