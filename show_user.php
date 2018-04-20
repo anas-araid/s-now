@@ -24,6 +24,24 @@
         right: 24px;
         transition: bottom .25s cubic-bezier(0,0,.2,1);
       }
+      .swal-modal {
+        border-radius: 20px;
+      }
+      .swal-title {
+        color: #03a9f4;
+        font-family: 'Quicksand', sans-serif;
+      }
+      .swal-button--button {
+        background-color: #e74c3c;
+        border: none!important;
+        outline: none!important;
+        border-radius: 10px;
+      }
+      .swal-button--cancel {
+        color: #3498db;
+        border-radius: 10px;
+      }
+
       </style>
   </head>
   <body class="mdl-color--grey-100">
@@ -150,7 +168,8 @@
 
             <div class="mdl-fab-expandable--child">
               <button id="button-delete"
-                      class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--red">
+                      class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--red"
+                      onclick="alertElimina()">
                 <i class="material-icons">delete_forever</i>
               </button>
               <div class="mdl-fab-expandable--child-label mdl-color-text--red">
@@ -159,36 +178,73 @@
             </div>
           </div>
         </div>
-
-      </main>
-      <dialog class="mdl-dialog stile-card-corners">
-        <h4 class="mdl-dialog__title mdl-color-text--blue">Sei sicuro?</h4>
-        <div class="mdl-dialog__content">
-          <p>
-            Perderai tutti i dati relativi al tuo account
-          </p>
-        </div>
-        <div class="mdl-dialog__actions">
-          <button type="button"
-                  class="mdl-button mdl-color--red mdl-color-text--white"
-                  style="border-radius:30px;"
-                  onclick="location.href='php/delete_user.php'">Continua</button>
-          <button type="button" class="mdl-button close mdl-color-text--blue" style="border-radius:30px;">Annulla</button>
-        </div>
-      </dialog>
-      <script>
-        var dialog = document.querySelector('dialog');
-        var showDialogButton = document.querySelector('#button-delete');
-        if (! dialog.showModal) {
-          dialogPolyfill.registerDialog(dialog);
+        <script>
+        function alertElimina(){
+          swal(
+            {
+              title: "Vuoi continuare?",
+              text: "Perderai tutti i dati relativi al tuo account",
+              icon: "error",
+              buttons: {
+                cancel: {
+                  text: "Annulla",
+                  visible: true,
+                },
+                button: {
+                  text: "Continua",
+                  visible: true,
+                }
+              }
+            }
+          ).then(Elimina => {
+            if (Elimina){
+              swal(" ", "Account eliminato con successo", "success").then(Elimina => {
+                location.href='php/delete_user.php';
+              });
+            }else{
+              swal.close();
+            }
+          });
         }
-        showDialogButton.addEventListener('click', function() {
-          dialog.showModal();
-        });
-        dialog.querySelector('.close').addEventListener('click', function() {
-          dialog.close();
-        });
-      </script>
+        </script>
+      </main>
     </div>
   </body>
 </html>
+
+
+
+<!--
+
+<dialog class="mdl-dialog stile-card-corners">
+  <h4 class="mdl-dialog__title mdl-color-text--blue">Sei sicuro?</h4>
+  <div class="mdl-dialog__content">
+    <p>
+      Perderai tutti i dati relativi al tuo account
+    </p>
+  </div>
+  <div class="mdl-dialog__actions">
+    <button type="button"
+            class="mdl-button mdl-color--red mdl-color-text--white"
+            style="border-radius:30px;"
+            onclick="location.href='php/delete_user.php'">Continua</button>
+    <button type="button" class="mdl-button close mdl-color-text--blue" style="border-radius:30px;">Annulla</button>
+  </div>
+</dialog>
+<script>
+  var dialog = document.querySelector('dialog');
+  var showDialogButton = document.querySelector('#button-delete');
+  if (! dialog.showModal) {
+    dialogPolyfill.registerDialog(dialog);
+  }
+  showDialogButton.addEventListener('click', function() {
+    dialog.showModal();
+  });
+  dialog.querySelector('.close').addEventListener('click', function() {
+    dialog.close();
+  });
+</script>
+
+
+
+-->
