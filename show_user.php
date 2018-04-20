@@ -178,35 +178,6 @@
             </div>
           </div>
         </div>
-        <script>
-        function alertElimina(){
-          swal(
-            {
-              title: "Vuoi continuare?",
-              text: "Perderai tutti i dati relativi al tuo account",
-              icon: "error",
-              buttons: {
-                cancel: {
-                  text: "Annulla",
-                  visible: true,
-                },
-                button: {
-                  text: "Continua",
-                  visible: true,
-                }
-              }
-            }
-          ).then(Elimina => {
-            if (Elimina){
-              swal(" ", "Account eliminato con successo", "success").then(Elimina => {
-                location.href='php/delete_user.php';
-              });
-            }else{
-              swal.close();
-            }
-          });
-        }
-        </script>
       </main>
     </div>
   </body>

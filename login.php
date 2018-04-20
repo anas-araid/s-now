@@ -13,6 +13,23 @@
     }
   }catch(Exception $e){
   }
+  ?>
+<!doctype>
+<html>
+  <head>
+  <?php
+    include "include/header.html";
+   ?>
+ </head>
+  <body class="stile-main">
+      <?php
+        include "include/login.html";
+        ?>
+  </body>
+</html>
+
+<?php
+
 
   if (!$error_message) {
     // isset ritorna true se una variabile è stata assegnata
@@ -28,37 +45,36 @@
         $db_username = $ris['Email'];
         $db_password = $ris['Password'];
         if ($db_username == $username && $db_password == text_filter_encrypt($password)) {
-          php_alert('Login corretto');
           $_SESSION['Nome'] = $ris['Nome'];
           $_SESSION['ID_utente'] = $ris['ID'];
           $_SESSION['email'] = $ris['Email'];
           $_SESSION['fotoProfilo'] = $ris['FotoProfilo'];
           $_SESSION['isLogged'] = true;
-          header("location:dashboard.php");
+          //php_alert('Login corretto');
+          echo "
+          <script>
+            flatAlert(' ', 'Login avvenuto con successo', 'success', 'dashboard.php');
+          </script>";
+          //header("location:dashboard.php");
+          //echo "<script>location.href='dashboard.php'</script>";
         }
       }
       $_POST['username']="";
       $_POST['password']="";
       if (!$_SESSION['isLogged']) {
-        php_alert('Username o password errati');
+        //php_alert('Username o password errati');
+        echo "
+        <script>
+            flatAlert('Accesso', 'Username o password errati', 'error', '');
+        </script>";
       }
       //mysqli_close($conn);
     }
   }else{
-    php_alert('Impossibile connettersi al database');
+    //php_alert('Impossibile connettersi al database');
+    echo "
+    <script>
+        flatAlert('Accesso', 'Impossibile connettersi al database', 'error', '');
+    </script>";
   }
 ?>
-
-<!doctype>
-<html>
-  <head>
-  <?php
-    include "include/header.html";
-   ?>
- </head>
-  <body class="stile-main">
-      <?php
-        include "include/login.html";
-        ?>
-  </body>
-</html>

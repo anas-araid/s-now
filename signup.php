@@ -1,7 +1,22 @@
 <?php
+  session_start();
+?>
+<!doctype>
+<html>
+  <head>
+  <?php
+    include "include/header.html";
+   ?>
+ </head>
+  <body class="stile-main">
+    <?php
+      include "include/signup.html";
+    ?>
+  </body>
+</html>
+<?php
     include 'php/db_connection.php';
     include 'php/functions.php';
-    session_start();
     if (!$error_message) {
         if (isset($_POST['nome']) &&
             isset($_POST['cognome']) &&
@@ -28,7 +43,11 @@
               if($estensioneImg === "png" || $estensioneImg === "jpg" || $estensioneImg === "jpeg") {
                 // Controlla la dimensione dell'immagine < 2mb
                 if ($_FILES["fotoDaCaricare"]["size"] > 2000000) {
-                  php_alert("Immagine troppo grande");
+                  //php_alert("Immagine troppo grande");
+                  echo "
+                  <script>
+                      flatAlert('Registrazione', 'Immagine troppo grande', 'error');
+                  </script>";
                   $fotoProfilo = "uploads/default.png";
                 }else{
                   if (!move_uploaded_file($_FILES["fotoDaCaricare"]["tmp_name"], $fotoProfilo)) {
@@ -36,11 +55,15 @@
                   }
                 }
               } else {
-                  php_alert("Immagine non valida");
+                  //php_alert("Immagine non valida");
                   $fotoProfilo = "uploads/default.png";
               }
             }else{
-              php_alert("Immagine non valida, utilizzare solamente il formato png e jpg");
+              //php_alert("Immagine non valida, utilizzare solamente il formato png e jpg");
+              echo "
+              <script>
+                  flatAlert('Registrazione', 'Immagine non valida, utilizzare solamente il formato png e jpg', 'error');
+              </script>";
               $fotoProfilo = "uploads/default.png";
             }
             $_SESSION['fotoProfilo'] = $fotoProfilo;
@@ -50,29 +73,25 @@
                 $insert = mysqli_query($db_conn, $query);
                 if ($insert==null)
                     throw new exception ("Utente già esistente");
-                php_alert('Registrazione completata');
                 $_SESSION['Nome'] = $nome;
                 $_SESSION['email'] = $email;
                 $_SESSION['fotoProfilo'] = $fotoProfilo;
                 $_SESSION['isLogged'] = true;
-                header("Location: dashboard.php");
+                echo "<script>location.href='dashboard.php'</script>";
+                //header("Location: dashboard.php");
+                //php_alert('Registrazione completata');
+                echo "
+                <script>
+                flatAlert('Registrazione', 'Registrazione completata', 'success');
+                </script>";
             } catch (Exception $e){
                 $message = $e->getMessage();
-                php_alert($message);
+                //php_alert($message);
+                echo "
+                <script>
+                    flatAlert('Registrazione', '$message' , 'error');
+                </script>";
             }
         }
     }
 ?>
-<!doctype>
-<html>
-  <head>
-  <?php
-    include "include/header.html";
-   ?>
- </head>
-  <body class="stile-main">
-    <?php
-      include "include/signup.html";
-    ?>
-  </body>
-</html>
