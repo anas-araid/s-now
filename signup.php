@@ -26,8 +26,8 @@
               $fotoProfilo = $directory.basename($email).".".$estensioneImg;
               // controlla se è realmente un immagine
               if($estensioneImg === "png" || $estensioneImg === "jpg" || $estensioneImg === "jpeg") {
-                // Controlla la dimensione dell'immagine < 1mb
-                if ($_FILES["fotoDaCaricare"]["size"] > 1000000) {
+                // Controlla la dimensione dell'immagine < 2mb
+                if ($_FILES["fotoDaCaricare"]["size"] > 2000000) {
                   php_alert("Immagine troppo grande");
                   $fotoProfilo = "uploads/default.png";
                 }else{
