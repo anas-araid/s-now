@@ -47,7 +47,7 @@
         </nav>
       </div>
       <main class="mdl-layout__content">
-        
+        <?php include "include/edit.php"; ?>
       </main>
     </div>
   </body>
