@@ -77,7 +77,7 @@
               <div class="mdl-shadow--4dp mdl-color--white stile-card-corners">
                 <p class="stile-text-azzurro">FOTO PROFILO</p>
                 <img src="<?php echo $user['FotoProfilo'] ?>"
-                     style="border-radius:15px;width:100px;height:100px;"></img>
+                     style="border-radius:50%;width:100px;height:100px;"></img>
               </div>
 
               <div class="mdl-shadow--4dp mdl-color--white stile-card-corners">
