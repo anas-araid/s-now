@@ -6,10 +6,10 @@
     include 'php/functions.php';
     include 'php/get_user_data.php';
     session_start();
-    // Controlla se la foto profilo esiste, altrimenti usa quella default
-    $_SESSION['fotoProfilo'] = profilePicture($_SESSION['email'], $_SESSION['fotoProfilo']);
     // getUserData ritorna un array con tutte le info dell'utente
     $user = getUserData($_SESSION['email']);
+    // Controlla se la foto profilo esiste, altrimenti usa quella default
+    $_SESSION['fotoProfilo'] = profilePicture($user['Email'], $_SESSION['fotoProfilo']);
     if(!$_SESSION['isLogged'] or $_SESSION['isLogged'] == "" or $user['ID'] == null){
       session_destroy();
       header("location:php/logout.php");

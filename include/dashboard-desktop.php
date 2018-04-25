@@ -20,7 +20,7 @@
       <div class="mdl-cell--1-col"></div>
       <div class="mdl-cell--9-col">
         <h2 class="stile-text-azzurro ">
-          Ciao <?php echo $_SESSION['Nome'] ?>
+          Ciao <?php echo $user['Nome'] ?>
         </h2>
          <hr class="stile-azzurro" style="width:100px;height:8px;border:5px solid white;border-radius:10px;">
          <div class="mdl-grid">

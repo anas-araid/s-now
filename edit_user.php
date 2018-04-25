@@ -74,7 +74,6 @@
           $updateUser = true;
           $isValid = false;
           if ($_FILES["caricamentoFoto"]["size"] != 0){
-            php_alert($_FILES["caricamentoFoto"]["size"]);
             $directory = "uploads/";
             $fotoProfilo = $directory.basename($_FILES["caricamentoFoto"]["name"]);
             $estensioneImg = strtolower(pathinfo($fotoProfilo, PATHINFO_EXTENSION));
@@ -118,12 +117,21 @@
             $query = "UPDATE t_utenti
                       SET Nome='$nome', Cognome='$cognome', DataDiNascita='$dataDiNascita', Genere='$genere', Residenza='$residenza', FotoProfilo='$fotoProfilo', Email='$email', Password='$password'
                       WHERE (ID = '$userID')";
-            echo $query;
             try{
                 $update = mysqli_query($db_conn, $query);
                 if ($update==null){
                     throw new exception ("Impossibile aggionare i dati");
                 }
+                // AGGIORNA ANCHE SESSION
+                $user = getUserData($email);
+                $_SESSION["email"] = $user["Email"];
+                $_SESSION["fotoProfilo"] = $user["FotoProfilo"];
+                $_SESSION["nome"] = $user["Nome"];
+
+                echo "
+                <script>
+                flatAlert('Modifica', 'Aggiornamento dei dati completato!', 'success', 'show_user.php');
+                </script>";
               } catch (Exception $e){
                   $message = $e->getMessage();
                   //php_alert($message);
