@@ -17,7 +17,7 @@
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <label class="mdl-textfield__label mdl-color-text--blue" for="fotoDaCaricare">Foto profilo (max 2mb)</label>
             <br>
-            <input class="mdl-textfield__input" type="file" name="fotoDaCaricare">
+            <input class="mdl-textfield__input" type="file" name="caricamentoFoto">
           </div>
         </div>
 
