@@ -68,22 +68,31 @@
               $fotoProfilo = "uploads/default.png";
             }
             if ($addUser){
-              $query = "INSERT INTO t_utenti (Nome, Cognome, DataDiNascita, Genere, Residenza, FotoProfilo, Email, Password)
+              $insertQuery = "INSERT INTO t_utenti (Nome, Cognome, DataDiNascita, Genere, Residenza, FotoProfilo, Email, Password)
                         VALUES('$nome', '$cognome', '$data', '$genere', '$residenza', '$fotoProfilo', '$email', '$password')";
               try{
-                  $insert = mysqli_query($db_conn, $query);
+                  $insert = mysqli_query($db_conn, $insertQuery);
                   if ($insert==null){
                       throw new exception ("Utente già esistente");
                   }
                   // se l'immagine ha passato i controlli
                   if ($isValid){
-                    // mysqli_insert_id restituisce l'ultimo id della tupla creata
-                    $userID = mysqli_insert_id($db_conn);
+                    // SCONSIGLIATO: mysqli_insert_id restituisce l'ultimo id della tupla creata
+                    // $userID = mysqli_insert_id($db_conn);
+
+                    // Estraggo l'id dell'utente
+                    $selectQuery = "SELECT ID FROM t_utenti WHERE Email='$email'";
+                    $select = mysqli_query($db_conn, $selectQuery);
+                    if ($select==null){
+                        throw new exception ("Errore nel restituire l'id");
+                    }
+                    while($ris = mysqli_fetch_array ($select, MYSQLI_ASSOC)){
+                      $userID = $ris["ID"];
+                    }
                     $fotoProfilo = "uploads/".$userID.$fotoProfilo;
-                    $sql = "UPDATE t_utenti SET FotoProfilo='$fotoProfilo' WHERE (Email='$email')";
-                    $update = mysqli_query($db_conn, $sql);
+                    $updateQuery = "UPDATE t_utenti SET FotoProfilo='$fotoProfilo' WHERE (Email='$email')";
+                    $update = mysqli_query($db_conn, $updateQuery);
                     if ($update==null){
-                        echo "error";
                         throw new exception ("Impossibile aggiornare l'utente");
                     }
                     if ($isValid) {
