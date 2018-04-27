@@ -7,7 +7,7 @@
     include 'php/get_user_data.php';
     session_start();
     // getUserData ritorna un array con tutte le info dell'utente
-    $user = getUserData($_SESSION['email']);
+    $user = getUserData($_SESSION['email'], "php/db_connection.php");
     // restituisce le coordinate(Lat e Long) della residenza per la mappa
     $coordResidenza = getCoordinatesFromAddress($user['Residenza']);
     // Controlla se la foto profilo esiste, altrimenti usa quella default

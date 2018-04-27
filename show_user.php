@@ -9,7 +9,7 @@
       // Controlla se la foto profilo esiste, altrimenti usa quella default
       $_SESSION['fotoProfilo'] = profilePicture($_SESSION['email'], $_SESSION['fotoProfilo']);
       // getUserData ritorna un array con tutte le info dell'utente
-      $user = getUserData($_SESSION['email']);
+      $user = getUserData($_SESSION['email'], "php/db_connection.php");
       if ($user['ID'] == null){
         header("location:php/logout.php");
       }

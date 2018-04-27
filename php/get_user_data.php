@@ -1,6 +1,6 @@
 <?php
-  function getUserData($email){
-    include "php/db_connection.php";
+  function getUserData($email, $dbConnPath){
+    include $dbConnPath;
     if ($_SESSION['isLogged']){
       $user = array();
       $sql = "SELECT * FROM t_utenti WHERE (Email='$email')";

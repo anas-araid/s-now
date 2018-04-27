@@ -9,7 +9,7 @@
     // Controlla se la foto profilo esiste, altrimenti usa quella default
     $_SESSION['fotoProfilo'] = profilePicture($_SESSION['email'], $_SESSION['fotoProfilo']);
     // getUserData ritorna un array con tutte le info dell'utente
-    $user = getUserData($_SESSION['email']);
+    $user = getUserData($_SESSION['email'], "php/db_connection.php");
     if(!$_SESSION['isLogged'] or $_SESSION['isLogged'] == "" or $user['ID'] == null){
       session_destroy();
       header("location:php/logout.php");
@@ -123,7 +123,7 @@
                     throw new exception ("Impossibile aggionare i dati");
                 }
                 // AGGIORNA ANCHE SESSION
-                $user = getUserData($email);
+                $user = getUserData($email, "php/db_connection.php");
                 $_SESSION["email"] = $user["Email"];
                 $_SESSION["fotoProfilo"] = $user["FotoProfilo"];
                 $_SESSION["nome"] = $user["Nome"];
