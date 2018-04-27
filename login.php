@@ -36,15 +36,14 @@
     if (isset($_POST['username']) && isset($_POST['password'])){
       $username = text_filter_lowercase($_POST['username']);
       $password = $_POST['password'];
-      $sql = "SELECT * FROM t_utenti";
+      $sql = "SELECT * FROM t_utenti WHERE Email='$username'";
       $risultato = mysqli_query($db_conn, $sql);
       if ($risultato == false){
         die("error");
       }
       while($ris = mysqli_fetch_array ($risultato, MYSQLI_ASSOC)){
-        $db_username = $ris['Email'];
         $db_password = $ris['Password'];
-        if ($db_username == $username && $db_password == text_filter_encrypt($password)) {
+        if (text_filter_encrypt($password) == $db_password) {
           $_SESSION['Nome'] = $ris['Nome'];
           $_SESSION['ID_utente'] = $ris['ID'];
           $_SESSION['email'] = $ris['Email'];
