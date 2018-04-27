@@ -16,6 +16,7 @@ These instructions will get you a copy of the project to running on your local m
 #### Set up your server
 
 * Copy this repo into your xampp htdocs folder
+* in XAMPP uncomment ;extension=php_openssl.dll in php.ini
 
 #### Set up the database
 * Start the XAMPP control panel (xampp-control.exe)

@@ -31,20 +31,22 @@
       }
       return $filePath;
     }
-    function getCoordinatesFromAddress($indirizzo, $stato){
+    function getCoordinatesFromAddress($indirizzo){
           $address = $indirizzo;
           $address = str_replace(" ", "+", $address);
-          $region = $stato;
-          do{
-            $json = file_get_contents("http://maps.google.com/maps/api/geocode/json?address=$address&sensor=false&region=$region");
-            $json = json_decode($json);
-          }while($json == null);
-          
+          $url = "https://maps.googleapis.com/maps/api/geocode/json?address=$address&key=AIzaSyBgwoQUpZNuWrgKJseSI53sQvWZAFkBzQ4";
+          $json = file_get_contents($url);
+          $json = json_decode($json);
           $lat = $json->{'results'}[0]->{'geometry'}->{'location'}->{'lat'};
           $long = $json->{'results'}[0]->{'geometry'}->{'location'}->{'lng'};
-          $coordinates = array();
-          $coordinates["lat"] = $lat;
-          $coordinates["long"] = $long;
-          return $coordinates;
+
+          $status = $json->status;
+          if($status=="OK"){
+            $coordinates = array();
+            $coordinates["lat"] = $lat;
+            $coordinates["long"] = $long;
+            return $coordinates;
+          }
+          return "error";
     }
 ?>
