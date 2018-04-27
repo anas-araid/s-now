@@ -63,5 +63,6 @@
         </section>
       </main>
     </div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgwoQUpZNuWrgKJseSI53sQvWZAFkBzQ4&callback=initMap" type="text/javascript"></script>
   </body>
 </html>

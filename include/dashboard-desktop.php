@@ -67,41 +67,17 @@
         Mappa
       </h2>
       <hr class="stile-azzurro" style="width:100px;height:8px;border:5px solid white;border-radius:10px;">
+      <div style="text-align:center">
+        <button class="mdl-button mdl-js-button mdl-button--raised"
+                style="width:80%;height:35px;color:white;background-color:#3498db;border:none;border-radius:20px;;text-align:center;margin-bottom:15px"
+                onclick="location.href='report.php'">
+          Aggiungi una segnalazione
+          <i class="material-icons">report_problem</i>
+        </button>
+      </div>
       <div id="map" style="width:100%; height:480px; border-radius:20px"></div>
 
-      <script>
-        function initMap() {
-          // fornisce latitudine e longitudine
-          var latlng = new google.maps.LatLng(<?php echo $coordResidenza['lat'] ?>,<?php echo $coordResidenza['long'] ?>);
-          // imposta le opzioni di visualizzazione
-          var options = { zoom: 15,
-                          center: latlng,
-                          mapTypeId: google.maps.MapTypeId.ROADMAP
-                        };
-          // crea l'oggetto mappa
-          var map = new google.maps.Map(document.getElementById('map'), options);
-          // create a custom marker
-          var myLatLng = {lat: <?php echo $coordResidenza['lat'] ?>, lng: <?php echo $coordResidenza['long'] ?>};
-          var marker = new google.maps.Marker({
-            animation: google.maps.Animation.BOUNCE,
-            position: myLatLng,
-            map: map,
-            title: '<?php echo $user["Residenza"] ?>',
-            icon: 'img/marker_user.png'
-          });
-
-          var infowindow = new google.maps.InfoWindow();
-          google.maps.event.addListener(marker, 'click', (function(marker) {
-            return function() {
-              infowindow.setContent("Residenza: <?php echo $user["Residenza"] ?>");
-              infowindow.open(map, marker);
-            }
-          })(marker));
-        }
-      </script>
-
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgwoQUpZNuWrgKJseSI53sQvWZAFkBzQ4&callback=initMap" type="text/javascript"></script>
-
+      <?php include "maps.php" ?>
     </div>
     <div class="mdl-card mdl-cell mdl-cell--4col mdl-shadow--4dp mdl-color--white stile-card-corners">
       <h2 class="stile-text-azzurro ">
