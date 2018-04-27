@@ -78,6 +78,7 @@
       <div id="map" style="width:100%; height:480px; border-radius:20px"></div>
 
       <?php include "maps.php" ?>
+
     </div>
     <div class="mdl-card mdl-cell mdl-cell--4col mdl-shadow--4dp mdl-color--white stile-card-corners">
       <h2 class="stile-text-azzurro ">

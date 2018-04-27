@@ -14,8 +14,8 @@
     $long = $coordinates["long"];
     $userID = $user["ID"];
     $date = date("Y-m-d");
-    $insertQuery = "INSERT INTO t_segnalazioni (Latitudine, Longitudine, Descrizione, Pericolosita , Data, FK_utente)
-                    VALUES ('$lat', '$long', '$description', '$severity', '$date', '$userID')";
+    $insertQuery = "INSERT INTO t_segnalazioni (Latitudine, Longitudine, Via, Citta, Descrizione, Pericolosita , Data, FK_utente)
+                    VALUES ('$lat', '$long', '$address', '$city', '$description', '$severity', '$date', '$userID')";
     $insert = mysqli_query($db_conn, $insertQuery);
     if ($insert==null){
         throw new exception ("Impossibile aggiungere la segnalazione");

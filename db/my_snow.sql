@@ -20,6 +20,8 @@ CREATE TABLE t_segnalazioni(
   ID              BIGINT        NOT NULL AUTO_INCREMENT,
   Latitudine      VARCHAR(40),
   Longitudine     VARCHAR(40),
+  Via             VARCHAR(50),
+  Citta           VARCHAR(50),
   Descrizione     CHAR(64),
   Pericolosita    ENUM('1', '2','3', '4', '5'),
   Data            DATE,

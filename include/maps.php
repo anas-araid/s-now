@@ -12,7 +12,6 @@
     // create a custom marker
     var myLatLng = {lat: <?php echo $coordResidenza['lat'] ?>, lng: <?php echo $coordResidenza['long'] ?>};
     var marker = new google.maps.Marker({
-      animation: google.maps.Animation.BOUNCE,
       position: myLatLng,
       map: map,
       title: '<?php echo $user["Residenza"] ?>',
@@ -26,5 +25,6 @@
         infowindow.open(map, marker);
       }
     })(marker));
+    <?php include "php/generate_markers.php" ?>
   }
-</script>
+  </script>
