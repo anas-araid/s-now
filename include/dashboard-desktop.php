@@ -67,18 +67,14 @@
         Mappa
       </h2>
       <hr class="stile-azzurro" style="width:100px;height:8px;border:5px solid white;border-radius:10px;">
+      <div id="map" style="width:100%; height:480px; border-radius:20px"></div>
 
-      <div>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgwoQUpZNuWrgKJseSI53sQvWZAFkBzQ4&callback=initMap" type="text/javascript"></script>
-        <script type="text/javascript">
-        var initialize = function() {
-          <?php
-            $coordResidenza = getCoordinatesFromAddress($user['Residenza'], "Italia")
-          ?>
+      <script>
+        function initMap() {
           // fornisce latitudine e longitudine
           var latlng = new google.maps.LatLng(<?php echo $coordResidenza['lat'] ?>,<?php echo $coordResidenza['long'] ?>);
           // imposta le opzioni di visualizzazione
-          var options = { zoom: 12,
+          var options = { zoom: 15,
                           center: latlng,
                           mapTypeId: google.maps.MapTypeId.ROADMAP
                         };
@@ -87,24 +83,24 @@
           // create a custom marker
           var myLatLng = {lat: <?php echo $coordResidenza['lat'] ?>, lng: <?php echo $coordResidenza['long'] ?>};
           var marker = new google.maps.Marker({
+            animation: google.maps.Animation.BOUNCE,
             position: myLatLng,
             map: map,
-            title: 'Hello World!',
-            icon: 'blue_marker.png'
+            title: '<?php echo $user["Residenza"] ?>',
+            icon: 'img/marker_user.png'
           });
 
           var infowindow = new google.maps.InfoWindow();
           google.maps.event.addListener(marker, 'click', (function(marker) {
             return function() {
-              infowindow.setContent("ciao");
+              infowindow.setContent("Residenza: <?php echo $user["Residenza"] ?>");
               infowindow.open(map, marker);
             }
           })(marker));
         }
-        window.onload = initialize;
-        </script>
-        <div id="map" style="width:100%; height:480px; border-radius:20px"></div>
-      </div>
+      </script>
+
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgwoQUpZNuWrgKJseSI53sQvWZAFkBzQ4&callback=initMap" type="text/javascript"></script>
 
     </div>
     <div class="mdl-card mdl-cell mdl-cell--4col mdl-shadow--4dp mdl-color--white stile-card-corners">

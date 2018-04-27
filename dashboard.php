@@ -8,6 +8,8 @@
     session_start();
     // getUserData ritorna un array con tutte le info dell'utente
     $user = getUserData($_SESSION['email']);
+    // restituisce le coordinate(Lat e Long) della residenza per la mappa
+    $coordResidenza = getCoordinatesFromAddress($user['Residenza'], "Italia");
     // Controlla se la foto profilo esiste, altrimenti usa quella default
     $_SESSION['fotoProfilo'] = profilePicture($user['Email'], $_SESSION['fotoProfilo']);
     if(!$_SESSION['isLogged'] or $_SESSION['isLogged'] == "" or $user['ID'] == null){
