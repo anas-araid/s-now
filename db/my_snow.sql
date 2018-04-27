@@ -21,7 +21,7 @@ CREATE TABLE t_segnalazioni(
   Latitudine      VARCHAR(40),
   Longitudine     VARCHAR(40),
   Descrizione     CHAR(64),
-  Pericolosita    ENUM('Bassa', 'Medio-bassa','Media', 'Medio-alta', 'Alta'),
+  Pericolosita    ENUM('1', '2','3', '4', '5'),
   Data            DATE,
   FK_utente       BIGINT,
   PRIMARY KEY(ID),
