@@ -1,6 +1,9 @@
 body, h1, h2, h3, h4, h5, h6, p, a{
   font-family: 'Quicksand', sans-serif;;
 }
+.mdl-tooltip .mdl-tooltip--large{
+  z-index: 100!important;
+}
 button.stile-small-round-button {
   width: 40px;
   height: 40px;
