@@ -56,13 +56,18 @@
                   $isValid = true;
                 }
               } else {
+                if ($estensioneImg === "" || $estensioneImg === " "){
+                  $addUser = true;
+                  $fotoProfilo = "uploads/default.png";
+                }else{
                   echo "
                   <script>
-                      flatAlert('Registrazione', 'Immagine non valida', 'error', 'signup.php');
+                  flatAlert('Registrazione', 'Immagine non valida', 'error', 'signup.php');
                   </script>";
                   $addUser = false;
                   //php_alert("Immagine non valida");
                   $fotoProfilo = "uploads/default.png";
+                }
               }
             }else{
               $fotoProfilo = "uploads/default.png";
@@ -104,6 +109,7 @@
                   $_SESSION['Nome'] = $nome;
                   $_SESSION['email'] = $email;
                   $_SESSION['fotoProfilo'] = $fotoProfilo;
+                  $_SESSION['ID_utente'] = $userID;
                   $_SESSION['isLogged'] = true;
                   //php_alert('Registrazione completata');
                   // HEADER STRANAMENTE NON FA NIENTE

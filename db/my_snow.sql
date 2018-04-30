@@ -28,7 +28,7 @@ CREATE TABLE t_segnalazioni(
   FK_utente       BIGINT,
   PRIMARY KEY(ID),
   FOREIGN KEY(FK_utente)    REFERENCES t_utenti(ID)
-    ON DELETE NO ACTION
+    ON DELETE SET NULL
     ON UPDATE CASCADE
 )ENGINE=InnoDB;
 

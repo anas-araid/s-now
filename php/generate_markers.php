@@ -17,14 +17,20 @@
     $severity = $ris["Pericolosita"];
     $date = date('d-m-Y', strtotime($ris["Data"]));
     $userID = $ris["FK_utente"];
-    $nameQuery = "SELECT Nome, Cognome FROM t_utenti WHERE ID='$userID'";
-    $getName = mysqli_query($db_conn, $nameQuery);
+    if ($userID == null){
+      $username = "Account eliminato";
+      $surname = "";
+    }else{
+      $nameQuery = "SELECT Nome, Cognome FROM t_utenti WHERE ID='$userID'";
+      $getName = mysqli_query($db_conn, $nameQuery);
+    }
     if ($getName == null){
       die("error");
-    }
-    while($ris = mysqli_fetch_array ($getName, MYSQLI_ASSOC)){
-      $username = $ris["Nome"];
-      $surname = $ris["Cognome"];
+    }else{
+      while($ris = mysqli_fetch_array ($getName, MYSQLI_ASSOC)){
+        $username = $ris["Nome"];
+        $surname = $ris["Cognome"];
+      }
     }
     switch($severity){
       case 1:
