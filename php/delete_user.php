@@ -1,5 +1,5 @@
 <?php
-include "db_connection.php";
+  include "db_connection.php";
   session_start();
   $ID_utente = $_SESSION['ID_utente'];
   $fotoProfilo = $_SESSION['fotoProfilo'];
