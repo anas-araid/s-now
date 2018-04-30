@@ -12,6 +12,7 @@
       <hr class="stile-azzurro" style="width:100px;height:8px;border:5px solid white;border-radius:10px;">
     </div>
   </div>
+
   <div class="mdl-fab-bottom-right mdl-button--fab-expandable bottom right mdl-fab-expandable--snack">
     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--blue">
       <i class="material-icons">more_vert</i>
@@ -38,7 +39,8 @@
       </div>
       <div class="mdl-fab-expandable--child">
         <button id="button-maps-mobile"
-                class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--red">
+                class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--red"
+                onclick="location.href='report.php'">
             <i class="material-icons">add_location</i>
         </button>
         <div class="mdl-fab-expandable--child-label mdl-color-text--red">
@@ -47,5 +49,4 @@
       </div>
     </div>
   </div>
-
 </div>

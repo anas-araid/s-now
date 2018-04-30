@@ -50,19 +50,57 @@
       </div>
       <main class="mdl-layout__content">
         <!-- INFO UTENTE PER DESKTOP-->
-        <section class="mdl-cell--hide-phone mdl-cell--hide-tablet">
+        <section id="desktop" class="mdl-cell--hide-phone mdl-cell--hide-tablet">
           <?php
             include "include/dashboard-desktop.php";
            ?>
         </section>
         <!-- INFO UTENTE PER MOBILE-->
-        <section class="mdl-cell--hide-desktop">
+        <section id="mobile" class="mdl-cell--hide-desktop">
           <?php
             include "include/dashboard-mobile.php";
            ?>
         </section>
+
+        <section>
+          <div class="mdl-grid">
+            <div id="mapCard" class="mdl-card mdl-cell mdl-shadow--4dp mdl-color--white stile-card-corners">
+               <h2 class="stile-text-azzurro ">
+                 Mappa
+               </h2>
+               <hr class="stile-azzurro" style="width:100px;height:8px;border:5px solid white;border-radius:10px;">
+               <div style="text-align:center">
+                 <button class="mdl-button mdl-js-button mdl-button--raised"
+                         style="width:90%;height:35px;color:white;background-color:#3498db;border:none;border-radius:20px;;text-align:center;margin-bottom:15px"
+                         onclick="location.href='report.php'">
+                   Aggiungi segnalazione
+                   <i class="material-icons">report_problem</i>
+                 </button>
+               </div>
+               <div id="map" style="width:100%; height:420px; border-radius:20px"></div>
+
+               <?php include "include/maps.php" ?>
+
+             </div>
+
+            <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--4dp mdl-color--white stile-card-corners mdl-cell--hide-phone mdl-cell--hide-tablet">
+              <h2 class="stile-text-azzurro ">
+                Chat
+              </h2>
+               <hr class="stile-azzurro" style="width:100px;height:8px;border:5px solid white;border-radius:10px;">
+            </div>
+          </div>
+        </section>
+
       </main>
     </div>
+    <script>
+      if(window.innerWidth <= 837){
+        jQuery("#mapCard").addClass("mdl-cell--12-col");
+      }else{
+        jQuery("#mapCard").addClass("mdl-cell--8-col");
+      }
+    </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgwoQUpZNuWrgKJseSI53sQvWZAFkBzQ4&callback=initMap" type="text/javascript"></script>
   </body>
 </html>

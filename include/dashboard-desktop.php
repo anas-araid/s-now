@@ -60,31 +60,3 @@
     </div>
   </div>
 </section>
-<section>
-  <div class="mdl-grid">
-    <div class="mdl-card mdl-cell mdl-cell--8-col mdl-shadow--4dp mdl-color--white stile-card-corners">
-      <h2 class="stile-text-azzurro ">
-        Mappa
-      </h2>
-      <hr class="stile-azzurro" style="width:100px;height:8px;border:5px solid white;border-radius:10px;">
-      <div style="text-align:center">
-        <button class="mdl-button mdl-js-button mdl-button--raised"
-                style="width:80%;height:35px;color:white;background-color:#3498db;border:none;border-radius:20px;;text-align:center;margin-bottom:15px"
-                onclick="location.href='report.php'">
-          Aggiungi una segnalazione
-          <i class="material-icons">report_problem</i>
-        </button>
-      </div>
-      <div id="map" style="width:100%; height:480px; border-radius:20px"></div>
-
-      <?php include "maps.php" ?>
-
-    </div>
-    <div class="mdl-card mdl-cell mdl-cell--4col mdl-shadow--4dp mdl-color--white stile-card-corners">
-      <h2 class="stile-text-azzurro ">
-        Chat
-      </h2>
-       <hr class="stile-azzurro" style="width:100px;height:8px;border:5px solid white;border-radius:10px;">
-    </div>
-  </div>
-</section>
