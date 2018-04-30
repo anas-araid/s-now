@@ -1,5 +1,6 @@
 <?php
   include "db_connection.php";
+
   $selectQuery = "SELECT * FROM t_segnalazioni";
   $select = mysqli_query($db_conn, $selectQuery);
   if ($select == null){
@@ -14,15 +15,16 @@
     $city = $ris["Citta"];
     $description = $ris["Descrizione"];
     $severity = $ris["Pericolosita"];
-    $date = $ris["Data"];
+    $date = date('d-m-Y', strtotime($ris["Data"]));
     $userID = $ris["FK_utente"];
-    $nameQuery = "SELECT Nome FROM t_utenti WHERE ID='$userID'";
+    $nameQuery = "SELECT Nome, Cognome FROM t_utenti WHERE ID='$userID'";
     $getName = mysqli_query($db_conn, $nameQuery);
     if ($getName == null){
       die("error");
     }
     while($ris = mysqli_fetch_array ($getName, MYSQLI_ASSOC)){
       $username = $ris["Nome"];
+      $surname = $ris["Cognome"];
     }
     switch($severity){
       case 1:
@@ -46,6 +48,8 @@
           $pericolosita = "Alto";
           break;
     }
+    //$infoWindowContent = "<a href='asdf'>$description</a> segnalata da $username";
+    $infoWindowContent = 'Pericolosità: '.$pericolosita.'<br> Descrizione: '.$description.'<br> Data: '.$date.'<br> Segnalata da <a href="show_user.php?id='.$userID.'" style="color:#3498db!important;" >'.$username.' '.$surname."</a>";
     echo "
     var myLatLng = {lat: $lat, lng: $long};
     var marker = new google.maps.Marker({
@@ -59,7 +63,7 @@
     var infowindow = new google.maps.InfoWindow();
     google.maps.event.addListener(marker, 'click', (function(marker) {
       return function() {
-        infowindow.setContent('$description segnalata da $username');
+        infowindow.setContent('$infoWindowContent');
         infowindow.open(map, marker);
       }
     })(marker));";
