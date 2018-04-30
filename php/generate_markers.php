@@ -49,7 +49,7 @@
           break;
     }
     //$infoWindowContent = "<a href='asdf'>$description</a> segnalata da $username";
-    $infoWindowContent = 'Pericolosità: '.$pericolosita.'<br> Descrizione: '.$description.'<br> Data: '.$date.'<br> Segnalata da <a href="show_user.php?id='.$userID.'" style="color:#3498db!important;" >'.$username.' '.$surname."</a>";
+    $infoWindowContent = 'Pericolosità: '.$pericolosita.'<br> Descrizione: '.$description.'<br> Data: '.$date.'<br> Segnalata da <a href="show_user.php?id='.$userID.'" style="color:#3498db!important;" >'.$username.' '.$surname.'</a> <br> <a href="php/delete_report.php?id='.$reportID.'" style="color:#e74c3c!important;">Cancella segnalazione</a>';
     echo "
     var myLatLng = {lat: $lat, lng: $long};
     var marker = new google.maps.Marker({

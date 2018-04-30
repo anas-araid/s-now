@@ -182,11 +182,11 @@
             <div class="mdl-fab-expandable--child">
               <button id="button-edit"
                       class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--orange"
-                      onclick="location.href='edit_user.php'">
-                <i class="material-icons">mode_edit</i>
+                      onclick="location.href='show_user.php'">
+                <i class="material-icons">account_circle</i>
               </button>
               <div class="mdl-fab-expandable--child-label mdl-color-text--orange">
-                <label>Modifica</label>
+                <label>Dettagli utente</label>
               </div>
             </div>
 

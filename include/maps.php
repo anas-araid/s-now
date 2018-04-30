@@ -25,6 +25,7 @@
         infowindow.open(map, marker);
       }
     })(marker));
+
     <?php include "php/generate_markers.php" ?>
   }
   </script>
