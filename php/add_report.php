@@ -5,11 +5,11 @@
   session_start();
   $user = getUserData($_SESSION['email'], "db_connection.php");
   if (isset($_POST['address']) && isset($_POST['city']) && isset($_POST['description']) ){
-    $address = $_POST["address"];
-    $city = $_POST["city"];
+    $address = text_filter(removeAccents($_POST["address"]));
+    $city = text_filter(removeAccents($_POST["city"]));
     $coordinates = getCoordinatesFromAddress($address." ".$city);
-    $description = $_POST["description"];
-    $severity = removeAccents($_POST["severity"]);
+    $description = text_filter($_POST["description"]);
+    $severity = text_filter($_POST["severity"]);
     $lat = $coordinates["lat"];
     $long = $coordinates["long"];
     $userID = $user["ID"];

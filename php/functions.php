@@ -20,6 +20,11 @@
     function php_log($text){
       echo "<script>console.log('".$text."')</script>";
     }
+    function removeQuotes($text){
+      $newText = str_replace("'", " ", $text);
+      $string = str_replace('"', " ", $newText);
+      return $string;
+    }
     function profilePicture($email, $filePath){
       include "php/db_connection.php";
       // Controlla se la foto profilo esiste, altrimenti usa quella default
