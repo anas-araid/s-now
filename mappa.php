@@ -4,7 +4,17 @@
   <?php
     include "include/header.html";
     include 'php/functions.php';
+    include 'php/get_user_data.php';
     session_start();
+    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    // error_reporting per togliere il notice quando non trova isLogged
+    error_reporting(0);
+
+    if ($_SESSION['isLogged']){
+      // getUserData ritorna un array con tutte le info dell'utente
+      $user = getUserData($_SESSION['email'], "php/db_connection.php");
+    }
+
    ?>
  </head>
   <body class="stile-main">
@@ -40,34 +50,34 @@
             <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--middle mdl-shadow--16dp stile-card" style="border:none;border-radius:17px;">
               <h1 class="stile-testo-bianco"><b><i>Mappa</i></b></h1>
                <hr style="width:100px;border:5px solid white;border-radius:10px;background:white;">
+               <form action="" method="post">
+                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="color:white">
+                   <input class="mdl-textfield__input" type="text" name="position" autofocus="" maxlength="50" style="color:white">
+                   <label class="mdl-textfield__label" for="position" style="color:white">Posizione...</label>
+                 </div>
+                 <button id="button-position" type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--white ">
+                  <i class="material-icons mdl-color-text--blue">person_pin_circle</i>
+                 </button>
+               </form>
                <?php
                 if(!$_SESSION['isLogged']){
-                  echo "<script>document.getElementById('aggiungiSegnalazione')</script>";
+                  if ($_POST['position']){
+                    $coordResidenza = getCoordinatesFromAddress($_POST['position']);
+                  }else{
+                    $coordResidenza = getCoordinatesFromAddress('Trento');
+                  }
+                }else{
+                  // restituisce le coordinate(Lat e Long) della residenza per la mappa
+                  $coordResidenza = getCoordinatesFromAddress($user['Residenza']);
                 }
                ?>
                <button id="aggiungiSegnalazione" class="stile-bottone-generico stile-button-fill"
-               style="width:100%;margin:16px 0px;"
-               onclick="location.href='login.php'">
-               Aggiungi una nuova segnalazione
-             </button>
-               <div id="mapdiv" style="height:50%;width:100%;"></div>
-               <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
-               <script>
-               map = new OpenLayers.Map("mapdiv");
-               console.log(map);
-               map.addLayer(new OpenLayers.Layer.OSM());
-               var lonLat = new OpenLayers.LonLat(42.088,12.564)
-               .transform(
-                 new OpenLayers.Projection("EPSG:3004"), // Sistema di riferimento
-                 map.getProjectionObject() // Proiezione Mercatore
-               );
-               var zoom=16;
-               //marker
-               var markers = new OpenLayers.Layer.Markers( "Markers" );
-               map.addLayer(markers);
-               markers.addMarker(new OpenLayers.Marker(lonLat));
-               map.setCenter (lonLat, zoom);
-               </script>
+                 style="width:100%;margin:16px 0px;"
+                 onclick="location.href='report.php'">
+                 Aggiungi una nuova segnalazione
+              </button>
+              <div id="map" style="width:100%; height:420px;border-radius:20px"></div>
+              <?php include "include/maps.php" ?>
             </div>
           </div>
           <!-- footer -->
@@ -77,6 +87,7 @@
             </div>
           </div>
         </section>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgwoQUpZNuWrgKJseSI53sQvWZAFkBzQ4&callback=initMap" type="text/javascript"></script>
       </main>
     </div>
   </body>
