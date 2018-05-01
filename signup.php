@@ -73,6 +73,7 @@
               $fotoProfilo = "uploads/default.png";
             }
             if ($addUser){
+              $userID = null;
               $insertQuery = "INSERT INTO t_utenti (Nome, Cognome, DataDiNascita, Genere, Residenza, FotoProfilo, Email, Password)
                         VALUES('$nome', '$cognome', '$data', '$genere', '$residenza', '$fotoProfilo', '$email', '$password')";
               try{
@@ -80,21 +81,20 @@
                   if ($insert==null){
                       throw new exception ("Utente già esistente");
                   }
+                  // SCONSIGLIATO: mysqli_insert_id restituisce l'ultimo id della tupla creata
+                  // $userID = mysqli_insert_id($db_conn);
+
+                  // Estraggo l'id dell'utente
+                  $selectQuery = "SELECT ID FROM t_utenti WHERE Email='$email'";
+                  $select = mysqli_query($db_conn, $selectQuery);
+                  if ($select==null){
+                    throw new exception ("Errore nel restituire l'id");
+                  }
+                  while($ris = mysqli_fetch_array ($select, MYSQLI_ASSOC)){
+                    $userID = $ris["ID"];
+                  }
                   // se l'immagine ha passato i controlli
                   if ($isValid){
-                    // SCONSIGLIATO: mysqli_insert_id restituisce l'ultimo id della tupla creata
-                    // $userID = mysqli_insert_id($db_conn);
-
-                    // Estraggo l'id dell'utente
-                    $selectQuery = "SELECT ID FROM t_utenti WHERE Email='$email'";
-                    $select = mysqli_query($db_conn, $selectQuery);
-                    if ($select==null){
-                        throw new exception ("Errore nel restituire l'id");
-                    }
-                    $userID = null;
-                    while($ris = mysqli_fetch_array ($select, MYSQLI_ASSOC)){
-                      $userID = $ris["ID"];
-                    }
                     $fotoProfilo = "uploads/".$userID.$fotoProfilo;
                     $updateQuery = "UPDATE t_utenti SET FotoProfilo='$fotoProfilo' WHERE (Email='$email')";
                     $update = mysqli_query($db_conn, $updateQuery);
