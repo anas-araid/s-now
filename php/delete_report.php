@@ -7,5 +7,5 @@
   if ($deleteQuery == null){
     die("error");
   }
-  header("location:../dashboard.php")
+  header("location:../dashboard.php");
 ?>

@@ -30,7 +30,8 @@
       </div>
       <div class="mdl-fab-expandable--child">
         <button id="button-chat-mobile"
-                class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--green">
+                class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--green"
+                onclick="location.href='chat.php?username='">
             <i class="material-icons">chat</i>
         </button>
         <div class="mdl-fab-expandable--child-label mdl-color-text--green">

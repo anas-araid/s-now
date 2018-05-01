@@ -21,15 +21,16 @@
       $username = "Account eliminato";
       $surname = "";
     }else{
-      $nameQuery = "SELECT Nome, Cognome FROM t_utenti WHERE ID='$userID'";
+      $nameQuery = "SELECT * FROM t_utenti WHERE ID='$userID'";
       $getName = mysqli_query($db_conn, $nameQuery);
     }
     if ($getName == null){
       die("error");
     }else{
       while($ris = mysqli_fetch_array ($getName, MYSQLI_ASSOC)){
-        $username = $ris["Nome"];
+        $name = $ris["Nome"];
         $surname = $ris["Cognome"];
+        $email = $ris["Email"];
       }
     }
     switch($severity){
@@ -55,7 +56,7 @@
           break;
     }
     //$infoWindowContent = "<a href='asdf'>$description</a> segnalata da $username";
-    $infoWindowContent = 'Pericolosità: '.$pericolosita.'<br> Descrizione: '.$description.'<br> Data: '.$date.'<br> Segnalata da <a href="show_user.php?id='.$userID.'" style="color:#3498db!important;" >'.$username.' '.$surname.'</a> <br> <a href="php/delete_report.php?id='.$reportID.'" style="color:#e74c3c!important;">Cancella segnalazione</a>';
+    $infoWindowContent = 'Pericolosità: '.$pericolosita.'<br> Descrizione: '.$description.'<br> Data: '.$date.'<br> Segnalata da '.$name.' '.$surname.'<br> Username utente: '.$email.' <br> <a href="chat.php?username='.$email.'" style="color:#27ae60!important;">Contatta '.$name.'</a>  <a href="php/delete_report.php?id='.$reportID.'" style="color:#e74c3c!important;">Cancella segnalazione</a>';
     echo "
     var myLatLng = {lat: $lat, lng: $long};
     var marker = new google.maps.Marker({

@@ -70,8 +70,8 @@
                </h2>
                <hr class="stile-azzurro" style="width:100px;height:8px;border:5px solid white;border-radius:10px;">
                <div style="text-align:center">
-                 <button class="mdl-button mdl-js-button mdl-button--raised"
-                         style="width:90%;height:35px;color:white;background-color:#3498db;border:none;border-radius:20px;;text-align:center;margin-bottom:15px"
+                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-color--orange"
+                         style="width:90%;height:35px;color:white;border:none;border-radius:20px;text-align:center;margin-bottom:15px"
                          onclick="location.href='report.php'">
                    Aggiungi segnalazione
                    <i class="material-icons">report_problem</i>
@@ -88,6 +88,14 @@
                 Chat
               </h2>
                <hr class="stile-azzurro" style="width:100px;height:8px;border:5px solid white;border-radius:10px;">
+               <div style="text-align:center">
+                 <button class="mdl-button mdl-js-button mdl-button--raised"
+                         style="width:90%;height:35px;color:white;background-color:#27ae60;border:none;border-radius:20px;;text-align:center;margin-bottom:15px"
+                         onclick="location.href='chat.php?username='">
+                   Scrivi a un segnalatore
+                   <i class="material-icons">chat</i>
+                 </button>
+               </div>
             </div>
           </div>
         </section>

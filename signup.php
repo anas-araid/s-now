@@ -91,6 +91,7 @@
                     if ($select==null){
                         throw new exception ("Errore nel restituire l'id");
                     }
+                    $userID = null;
                     while($ris = mysqli_fetch_array ($select, MYSQLI_ASSOC)){
                       $userID = $ris["ID"];
                     }
