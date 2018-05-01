@@ -77,7 +77,7 @@
                    <i class="material-icons">report_problem</i>
                  </button>
                </div>
-               <div id="map" style="width:100%; height:420px; border-radius:20px"></div>
+               <div id="map" style="width:100%; height:420px;border-radius:20px"></div>
 
                <?php include "include/maps.php" ?>
 
@@ -96,6 +96,9 @@
                    <i class="material-icons">chat</i>
                  </button>
                </div>
+               <div id="lastMsg" style="overflow:auto">
+                 <?php include "php/get_last_messages.php" ?>
+               <div>
             </div>
           </div>
         </section>
