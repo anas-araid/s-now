@@ -132,7 +132,7 @@
                          name="receiverEmail"
                          required=""
                          maxlength="50"
-                         value="<?php echo $receiverData['Nome'] != null ? $receiverData['Email'] : "Inserisci email..." ?>"
+                         placeholder="<?php echo $receiverData['Nome'] != null ? $receiverData['Email'] : "Inserisci email..." ?>"
                          style="text-align:center"/>
                 </div>
               </div>
