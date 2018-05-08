@@ -34,7 +34,7 @@ CREATE TABLE t_segnalazioni(
 CREATE TABLE t_messaggi(
   ID              BIGINT        NOT NULL AUTO_INCREMENT,
   Data            DATE,
-  Messaggio       VARCHAR(130),
+  Messaggio       VARCHAR(70),
   FK_Mittente     BIGINT        NOT NULL,
   FK_Destinatario BIGINT        NOT NULL,
   PRIMARY KEY(ID),

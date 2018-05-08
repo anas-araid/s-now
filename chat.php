@@ -132,7 +132,8 @@
                          name="receiverEmail"
                          required=""
                          maxlength="50"
-                         placeholder="<?php echo $receiverData['Nome'] != null ? $receiverData['Email'] : "Inserisci email..." ?>"
+                         value="<?php echo $receiverData['Nome'] != null ? $receiverData['Email'] : '' ?>"
+                         placeholder="Inserisci email..."
                          style="text-align:center"/>
                 </div>
               </div>
@@ -144,7 +145,7 @@
                          id="message"
                          name="message"
                          required=""
-                         maxlength="130"
+                         maxlength="70"
                          style="text-align:center"/>
                 </div>
               </div>
@@ -164,7 +165,7 @@
             <hr class="stile-azzurro" style="width:100px;height:8px;border:5px solid white;border-radius:10px;">
             <button id="button-refresh"
                     class="mdl-button mdl-js-button mdl-button--raised mdl-color--orange"
-                    style="width:80%;height:35px;color:white;border:none;border-radius:20px;text-align:center;margin:20px 0px"
+                    style="width:80%;min-height:35px;color:white;border:none;border-radius:20px;text-align:center;margin:20px 0px"
                     onclick="location.reload()">
               <i class="material-icons">refresh</i>
             </button>
