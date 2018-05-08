@@ -10,7 +10,6 @@ CREATE TABLE t_utenti (
   Genere 			     ENUM('M', 'F'),
   Residenza        VARCHAR(50),
   FotoProfilo      VARCHAR(100),
-  Valutazione      ENUM('1', '2', '3', '4', '5'),
   Email 			     VARCHAR(50)	UNIQUE,
   Password			   CHAR(64),
   PRIMARY KEY(ID)

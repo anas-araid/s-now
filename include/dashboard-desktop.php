@@ -41,17 +41,10 @@
              </p>
            </div>
            <div class="stile-dashboard-card mdl-cell mdl-cell--4-col mdl-shadow--4dp mdl-color--white">
-             <p class="stile-text-azzurro">VALUTAZIONE</p>
+             <p class="stile-text-azzurro">SEGNALAZIONI EFFETTUATE</p>
              <p>
                <?php
-                $valutazione = $user['Valutazione'];
-                for ($i=0; $i < 5; $i++){
-                  if ($i < $valutazione){
-                    echo '<span class="fa fa-star stile-star-checked"></span>';
-                  }else{
-                    echo '<span class="fa fa-star"></span>';
-                  }
-                }
+                include "php/get_user_reports.php";
                ?>
              </p>
            </div>

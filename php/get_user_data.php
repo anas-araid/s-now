@@ -16,7 +16,6 @@
         $user['Genere'] = $ris['Genere'];
         $user['Residenza'] = $ris['Residenza'];
         $user['FotoProfilo'] = $ris['FotoProfilo'];
-        $user['Valutazione'] = $ris['Valutazione'];
         $user['Email'] = $ris['Email'];
         $user['Password'] = $ris['Password'];
       }
