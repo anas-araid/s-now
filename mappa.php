@@ -61,14 +61,13 @@
                </form>
                <?php
                 if(!$_SESSION['isLogged']){
-                  if ($_POST['position']){
-                    $coordResidenza = getCoordinatesFromAddress($_POST['position']);
-                  }else{
-                    $coordResidenza = getCoordinatesFromAddress('Trento');
-                  }
+                  $coordResidenza = getCoordinatesFromAddress('Trento');
                 }else{
                   // restituisce le coordinate(Lat e Long) della residenza per la mappa
                   $coordResidenza = getCoordinatesFromAddress($user['Residenza']);
+                }
+                if ($_POST['position']){
+                  $coordResidenza = getCoordinatesFromAddress($_POST['position']);
                 }
                ?>
                <button id="aggiungiSegnalazione" class="stile-bottone-generico stile-button-fill"
