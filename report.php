@@ -144,6 +144,7 @@
                   <div class="mdl-cell mdl-cell--6-col">
                     <button class="mdl-button mdl-js-button mdl-button--raised"
                             style="width:100%;height:35px;color:white;background-color:#e74c3c;border:none;border-radius:20px;;text-align:center"
+                            type="reset"
                             onclick="location.href='dashboard.php'">
                       <i class="material-icons">cancel</i>
                     </button>
