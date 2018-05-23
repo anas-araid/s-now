@@ -48,4 +48,3 @@ CREATE TABLE t_messaggi(
 
 INSERT INTO t_utenti (Nome, Cognome, DataDiNascita, Genere, Residenza, FotoProfilo, Email, Password) VALUES('Mario', 'Rossi', '1999-01-01', 'M', 'Pergine Valsugana', 'uploads/default.png', 'mario@rossi.com', '5f4dcc3b5aa765d61d8327deb882cf99');
 INSERT INTO t_utenti (Nome, Cognome, DataDiNascita, Genere, Residenza, FotoProfilo, Email, Password) VALUES('Giuseppe', 'Verdi', '1950-04-20', 'M', 'Pergine Valsugana', 'uploads/default.png', 'giuseppe@verdi.com', '5f4dcc3b5aa765d61d8327deb882cf99');
-INSERT INTO t_utenti (Nome, Cognome, DataDiNascita, Genere, Residenza, FotoProfilo, Email, Password) VALUES('Anas', 'Araid', '1999-05-18', 'M', 'Pergine Valsugana', 'uploads/default.png', 'anas@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99');
