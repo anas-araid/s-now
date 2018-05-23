@@ -18,6 +18,11 @@
    ?>
  </head>
   <body class="stile-main">
+    <div id="loading-div" class="stile-parent" style="height:100%;background-color:white;z-index:10000">
+      <div class="stile-child">
+        <img src="img/loading.gif"></img>
+      </div>
+    </div>
     <div class="mdl-layout mdl-js-layout">
       <header class="mdl-layout__header mdl-layout__header--transparent">
         <div class="mdl-layout__header-row">
@@ -43,7 +48,7 @@
           <a class="mdl-navigation__link stile-text-azzurro" href="https://github.com/asdf1899/s-now">Github <i class="fa fa-github"></i></a>
         </nav>
       </div>
-      <main class="mdl-layout__content">
+      <main id="main" class="mdl-layout__content">
         <section>
           <!-- mappa-->
           <div id="mappa" class="mdl-grid">
@@ -86,6 +91,14 @@
             </div>
           </div>
         </section>
+        <script>
+          // nasconde il contenuto della pagina per 2 secondi per mostrare il loading
+          document.getElementById("main").style.display = "none";
+          setTimeout(function(){
+            document.getElementById("loading-div").remove();
+            document.getElementById("main").style.display = "block";
+          }, 2000);
+        </script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgwoQUpZNuWrgKJseSI53sQvWZAFkBzQ4&callback=initMap" type="text/javascript"></script>
       </main>
     </div>

@@ -31,6 +31,11 @@
  </head>
 
   <body class="mdl-color--grey-100">
+    <div id="loading-div" class="stile-parent" style="height:100%;background-color:white;z-index:10000">
+      <div class="stile-child">
+        <img src="img/loading.gif"></img>
+      </div>
+    </div>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
       <header class="mdl-layout__header mdl-layout__header--transparent mdl-cell--hide-desktop">
         <div class="mdl-layout__header-row">
@@ -48,7 +53,7 @@
           <a class="mdl-navigation__link" href="php/logout.php">Esci</a>
         </nav>
       </div>
-      <main class="mdl-layout__content">
+      <main id="main" class="mdl-layout__content">
         <!-- INFO UTENTE PER DESKTOP-->
         <section id="desktop" class="mdl-cell--hide-phone mdl-cell--hide-tablet">
           <?php
@@ -111,6 +116,13 @@
       }else{
         jQuery("#mapCard").addClass("mdl-cell--8-col");
       }
+      
+      // nasconde il contenuto della pagina per 2 secondi per mostrare il loading
+      document.getElementById("main").style.display = "none";
+      setTimeout(function(){
+        document.getElementById("loading-div").remove();
+        document.getElementById("main").style.display = "block";
+      }, 2000);
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgwoQUpZNuWrgKJseSI53sQvWZAFkBzQ4&callback=initMap" type="text/javascript"></script>
   </body>
