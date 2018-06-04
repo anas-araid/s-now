@@ -49,7 +49,7 @@
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="index.html">Home</a>
           <a class="mdl-navigation__link" href="mappa.php">Mappa</a>
-          <a class="mdl-navigation__link" href="https://github.com/asdf1899/s-now">GitHub <i class="fa fa-github"></i></a>
+          <a class="mdl-navigation__link" href="include/help.html">Serve aiuto?</a>
           <a class="mdl-navigation__link" href="php/logout.php">Esci</a>
         </nav>
       </div>

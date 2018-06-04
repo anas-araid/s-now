@@ -35,7 +35,7 @@
             <a class="mdl-navigation__link" href="index.html">Home</a>
             <a class="mdl-navigation__link" href="#">Mappa</a>
             <a class="mdl-navigation__link" href="login.php">Accedi</a>
-            <a class="mdl-navigation__link" href="https://github.com/asdf1899/s-now">Github <i class="fa fa-github"></i></a>
+            <a class="mdl-navigation__link" href="include/help.html">Serve aiuto?</a>
           </nav>
         </div>
       </header>
@@ -45,7 +45,7 @@
           <a class="mdl-navigation__link stile-text-azzurro" href="index.html">Home</a>
           <a class="mdl-navigation__link stile-text-azzurro" href="#">Mappa</a>
           <a class="mdl-navigation__link stile-text-azzurro" href="login.php">Accedi</a>
-          <a class="mdl-navigation__link stile-text-azzurro" href="https://github.com/asdf1899/s-now">Github <i class="fa fa-github"></i></a>
+          <a class="mdl-navigation__link" href="include/help.html">Serve aiuto?</a>
         </nav>
       </div>
       <main id="main" class="mdl-layout__content">
