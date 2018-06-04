@@ -116,7 +116,7 @@
       }else{
         jQuery("#mapCard").addClass("mdl-cell--8-col");
       }
-      
+
       // nasconde il contenuto della pagina per 2 secondi per mostrare il loading
       document.getElementById("main").style.display = "none";
       setTimeout(function(){
