@@ -84,12 +84,6 @@
               <?php include "include/maps.php" ?>
             </div>
           </div>
-          <!-- footer -->
-          <div class="stile-main" style="padding:10px;text-align:center;">
-            <div class="stile-footer">
-             <p class="stile-testo-bianco"><i class="fa fa-code"></i> with <i class="fa fa-coffee"></i> by Anas Araid <i class="fa fa-copyright"></i> 2018</p>
-            </div>
-          </div>
         </section>
         <script>
           // nasconde il contenuto della pagina per 2 secondi per mostrare il loading
