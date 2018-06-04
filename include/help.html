@@ -1,0 +1,67 @@
+<!doctype>
+<html>
+  <head>
+    <title>s-now</title>
+    <meta charset="utf-8"/>
+    <meta name="theme-color" content="#2173b9">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="../css/reset.css" />
+    <link type="text/css" rel="stylesheet" href="../css/material.min.css" />
+    <link type="text/css" rel="stylesheet" href="../css/mdl-expandablefab.min.css" />
+    <link type="text/css" rel="stylesheet" href="../css/style.css" />
+    <link type="text/css" href="../css/font-quicksand.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <script src="../js/mdl-expandablefab.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/material.js"></script>
+    <script src="../js/sweetalert.js"></script>
+    <script src="../js/script.js"></script>
+    <style>
+     .mdl-layout__drawer-button{
+       color: #2173b9!important;
+     }
+     .mdl-fab-bottom-right {
+       position: fixed;
+       bottom: 24px;
+       right: 24px;
+       transition: bottom .25s cubic-bezier(0,0,.2,1);
+     }
+    </style>
+  </head>
+  <body class="mdl-color--grey-100">
+    <div id="loading-div" class="stile-parent" style="height:100%;background-color:white;z-index:10000">
+      <div class="stile-child">
+        <img src="../img/loading.gif"></img>
+      </div>
+    </div>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+      <header class="mdl-layout__header mdl-layout__header--transparent mdl-cell--hide-desktop">
+        <div class="mdl-layout__header-row">
+          <div class="mdl-layout-spacer"></div>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer stile-main-vertical" style="border:none">
+        <div style="height:120px;text-align:center;padding:20px;">
+          <span class="mdl-layout-title mdl-color-text--white"><b>s-<i>now</i></b></span>
+        </div>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="../index.html">Home</a>
+          <a class="mdl-navigation__link" href="../mappa.php">Mappa</a>
+          <a class="mdl-navigation__link" href="../login.php">Accedi</a>
+        </nav>
+      </div>
+      <main id="main" class="mdl-layout__content">
+      </main>
+    </div>
+    <script>
+      // nasconde il contenuto della pagina per 2 secondi per mostrare il loading
+      document.getElementById("main").style.display = "none";
+      setTimeout(function(){
+        document.getElementById("loading-div").remove();
+        document.getElementById("main").style.display = "block";
+      }, 2000);
+    </script>
+  </body>
+</html>
