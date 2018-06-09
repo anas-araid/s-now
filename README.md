@@ -1,6 +1,6 @@
 # s-_now_
 
-Snowy and frozen roads monitoring webapp
+It's a webapp that allows the monitoring of frozen or snowy roads in your area, in order to avoid possible accidents or anything else.
 
 ## Getting Started
 
