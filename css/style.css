@@ -1,6 +1,9 @@
 body, h1, h2, h3, h4, h5, h6, p, a{
   font-family: 'Quicksand', sans-serif;;
 }
+button{
+  cursor: pointer!important;
+}
 .mdl-tooltip .mdl-tooltip--large{
   z-index: 100!important;
 }
@@ -110,6 +113,9 @@ input{
 .stile-td-link{
   cursor: pointer;
   padding: 10px;
+}
+.stile-a-table{
+  color: #616161!important;
 }
 .stile-td-link:hover{
   background-color: rgba(250, 250, 250, 0.2);
