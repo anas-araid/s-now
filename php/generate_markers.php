@@ -1,5 +1,7 @@
 <?php
   include "db_connection.php";
+  // cancella le segnalazioni vecchie di 2 mesi
+  include "delete_old_markers.php";
 
   $selectQuery = "SELECT * FROM t_segnalazioni";
   $select = mysqli_query($db_conn, $selectQuery);
