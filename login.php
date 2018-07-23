@@ -73,7 +73,7 @@
     //php_alert('Impossibile connettersi al database');
     echo "
     <script>
-        flatAlert('Accesso', 'Impossibile connettersi al database', 'error', '');
+        flatAlert('Accesso', 'Impossibile connettersi al database', 'error', 'index.html');
     </script>";
   }
 ?>
