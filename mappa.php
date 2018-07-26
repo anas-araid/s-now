@@ -58,7 +58,7 @@
                <form action="" method="post">
                  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="color:white">
                    <input class="mdl-textfield__input" type="text" name="position" autofocus="" maxlength="50" style="color:white">
-                   <label class="mdl-textfield__label" for="position" style="color:white">Posizione...</label>
+                   <label class="mdl-textfield__label" for="position" style="color:white">Inserisci la tua posizione...</label>
                  </div>
                  <button id="button-position" type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--white ">
                   <i class="material-icons mdl-color-text--blue">person_pin_circle</i>
