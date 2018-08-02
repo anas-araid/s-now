@@ -5,28 +5,31 @@
   if ($getMsg != null){
     while ($ris = mysqli_fetch_array($getMsg)){
       $senderID = $ris['FK_Mittente'];
-      $senderData = getSenderData($senderID, $db_conn);
+      $receiverID = $ris['FK_Destinatario'];
+      $senderData = getMessagingData($senderID, $db_conn);
+      $receiverData = getMessagingData($receiverID, $db_conn);
+
       echo '
       <div class=" mdl-cell mdl-cell--8-col mdl-shadow--4dp mdl-cell-middle mdl-color--white stile-card-corners" style="width:80%">
       <a href="chat.php?username='.$senderData['Email'].'" style="color:#27ae60!important">'.$senderData['Nome'].': </a>
       <p>'.$ris['Messaggio'].'</p>
-      <p class="stile-text-azzurro" style="display:inline!important">'.date('d-m-Y', strtotime($ris['Data'])).'</p>
+      <p class="stile-text-azzurro" style="display:inline!important">Inviato il '.date('d-m-Y', strtotime($ris['Data'])).' a '.$receiverData['Nome'].'</p>
       </div>';
     }
   }
-  function getSenderData($id, $db_conn){
-    $sender = array();
+  function getMessagingData($id, $db_conn){
+    $user = array();
     $sql = "SELECT * FROM t_utenti WHERE (ID='$id')";
     $risultato = mysqli_query($db_conn, $sql);
     if ($risultato == false){
       die("error");
     }
     while($ris = mysqli_fetch_array ($risultato, MYSQLI_ASSOC)){
-      $sender['ID'] = $ris['ID'];
-      $sender['Nome'] = $ris['Nome'];
-      $sender['Cognome'] = $ris['Cognome'];
-      $sender['Email'] = $ris['Email'];
+      $user['ID'] = $ris['ID'];
+      $user['Nome'] = $ris['Nome'];
+      $user['Cognome'] = $ris['Cognome'];
+      $user['Email'] = $ris['Email'];
     }
-    return $sender;
+    return $user;
   }
  ?>

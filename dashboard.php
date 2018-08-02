@@ -88,7 +88,7 @@
 
              </div>
 
-            <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--4dp mdl-color--white stile-card-corners mdl-cell--hide-phone mdl-cell--hide-tablet">
+            <div class="mdl-card mdl-cell mdl-cell--4-col mdl-shadow--4dp mdl-color--white stile-card-corners ">
               <h2 class="stile-text-azzurro ">
                 Chat
               </h2>
