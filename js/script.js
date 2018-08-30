@@ -8,7 +8,7 @@ function slideImmagini(){
   }
   setTimeout(slideImmagini, 2000);
 }
-function alertElimina(){
+function alertEliminaUtente(){
   swal(
     {
       title: "Vuoi continuare?",

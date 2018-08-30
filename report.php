@@ -179,7 +179,16 @@
                 <label>Dashboard</label>
               </div>
             </div>
-
+            <div class="mdl-fab-expandable--child">
+              <button id="button-delete"
+                      class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--red"
+                      onclick="location.href='mappa.php'">
+                <i class="material-icons">place</i>
+              </button>
+              <div class="mdl-fab-expandable--child-label mdl-color-text--red">
+                <label>Mappa</label>
+              </div>
+            </div>
             <div class="mdl-fab-expandable--child">
               <button id="button-edit"
                       class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--orange"
@@ -191,16 +200,6 @@
               </div>
             </div>
 
-            <div class="mdl-fab-expandable--child">
-              <button id="button-delete"
-                      class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--red"
-                      onclick="alertElimina()">
-                <i class="material-icons">delete_forever</i>
-              </button>
-              <div class="mdl-fab-expandable--child-label mdl-color-text--red">
-                <label>Elimina</label>
-              </div>
-            </div>
           </div>
         </div>
       </main>

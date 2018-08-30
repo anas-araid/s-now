@@ -200,7 +200,7 @@
     <div class="mdl-fab-expandable--child">
       <button id="button-delete"
               class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-color--red"
-              onclick="alertElimina()">
+              onclick="alertEliminaUtente()">
         <i class="material-icons">delete_forever</i>
       </button>
       <div class="mdl-fab-expandable--child-label mdl-color-text--red">
