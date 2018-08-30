@@ -31,6 +31,22 @@ CREATE TABLE t_segnalazioni(
     ON UPDATE CASCADE
 )ENGINE=InnoDB;
 
+CREATE TABLE t_archivio(
+  ID              BIGINT        NOT NULL AUTO_INCREMENT,
+  Latitudine      VARCHAR(40),
+  Longitudine     VARCHAR(40),
+  Via             VARCHAR(50),
+  Citta           VARCHAR(50),
+  Descrizione     CHAR(64),
+  Pericolosita    ENUM('1', '2','3', '4', '5'),
+  Data            DATE,
+  FK_utente       BIGINT,
+  PRIMARY KEY(ID),
+  FOREIGN KEY(FK_utente)    REFERENCES t_utenti(ID)
+    ON DELETE SET NULL
+    ON UPDATE CASCADE
+)ENGINE=InnoDB;
+
 CREATE TABLE t_messaggi(
   ID              BIGINT        NOT NULL AUTO_INCREMENT,
   Data            DATE,

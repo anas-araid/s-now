@@ -16,8 +16,11 @@
     $date = date("Y-m-d");
     $insertQuery = "INSERT INTO t_segnalazioni (Latitudine, Longitudine, Via, Citta, Descrizione, Pericolosita , Data, FK_utente)
                     VALUES ('$lat', '$long', '$address', '$city', '$description', '$severity', '$date', '$userID')";
+    $recordQuery = "INSERT INTO t_archivio (Latitudine, Longitudine, Via, Citta, Descrizione, Pericolosita , Data, FK_utente)
+                    VALUES ('$lat', '$long', '$address', '$city', '$description', '$severity', '$date', '$userID')";
     $insert = mysqli_query($db_conn, $insertQuery);
-    if ($insert==null){
+    $record = mysqli_query($db_conn, $recordQuery);
+    if ($insert==null || $record == null){
         throw new exception ("Impossibile aggiungere la segnalazione");
     }
   }
