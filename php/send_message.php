@@ -10,6 +10,7 @@
     $receiverData = getUserData($_POST['receiverEmail'], "db_connection.php");
     $date = date("Y-m-d");
     $message = $_POST['message'];
+    $message = text_filter($message);
     $senderID = $senderData['ID'];
     $receiverID = $receiverData['ID'];
     if ($receiverData != null){

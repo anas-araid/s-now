@@ -208,7 +208,9 @@ input{
   padding:20px;
   margin-top:20px;
 }
-
+#btn-iscrizione:hover{
+  box-shadow: none!important;
+}
 
 .stile-arrow {
   text-align: center;
