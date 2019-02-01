@@ -152,6 +152,7 @@ input{
   }
 .stile-testo-bianco{
   color: white;
+  font-family: 'Quicksand', sans-serif;
 }
 .stile-titolo-centrale{
     left: 0;
@@ -221,6 +222,17 @@ input{
   -moz-animation: bounce 2s infinite;
   -webkit-animation: bounce 2s infinite;
   animation: bounce 2s infinite;
+}
+.style-gradient-text{
+  color: #2173b9;
+  background-image: -webkit-linear-gradient(left, #1ad5ff , #2173b9); /* For Chrome and Safari */
+  background-image:    -moz-linear-gradient(left, #1ad5ff, #2173b9); /* For old Fx (3.6 to 15) */
+  background-image:     -ms-linear-gradient(left, #1ad5ff, #2173b9); /* For pre-releases of IE 10*/
+  background-image:      -o-linear-gradient(left, #1ad5ff, #2173b9); /* For old Opera (11.1 to 12.0) */
+  background-image:         linear-gradient(to left, #1ad5ff, #2173b9); /* Standard syntax; must be last */
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 @keyframes bounce {
