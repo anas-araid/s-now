@@ -212,6 +212,9 @@ input{
 #btn-iscrizione:hover{
   box-shadow: none!important;
 }
+#btn-accedi:hover{
+  box-shadow: none!important;
+}
 
 .stile-arrow {
   text-align: center;
