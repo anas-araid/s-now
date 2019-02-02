@@ -74,11 +74,17 @@
           <div class="stile-parent stile-indexMap">
             <div class="stile-child" style="z-index:2000;text-align:center">
               <h4 style="color:white">Inserisci la tua posizione</h4><br>
-              <input type="text" style="opacity:1;border-radius:20px;color:white;width:50%;height:40px;"></input>
-              <button id="button-position" type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--white ">
+              <input id="position" type="text" style="opacity:1;border-radius:20px;color:white;width:50%;height:40px;"></input>
+              <button id="button-position" type="submit" onclick="sendPosition()" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--white">
                <i class="material-icons mdl-color-text--blue">person_pin_circle</i>
               </button>
             </div>
+            <script>
+              function sendPosition(){
+                var position = document.getElementById('position').value;
+                location.href = "mappa.php?position=" + position;
+              }
+            </script>
           </div>
           <br>
           <br>

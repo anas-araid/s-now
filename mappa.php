@@ -71,6 +71,10 @@
                   // restituisce le coordinate(Lat e Long) della residenza per la mappa
                   $coordResidenza = getCoordinatesFromAddress($user['Residenza']);
                 }
+                if ($_GET['position']){
+                  $getPosition = text_filter($_GET['position']);
+                  $coordResidenza = getCoordinatesFromAddress($getPosition);
+                }
                 if ($_POST['position']){
                   $coordResidenza = getCoordinatesFromAddress($_POST['position']);
                 }
