@@ -226,6 +226,17 @@ input{
   -webkit-animation: bounce 2s infinite;
   animation: bounce 2s infinite;
 }
+.stile-indexMap{
+  background:url(../img/bg.jpg);
+  width:100%;
+  min-height:500px;
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  left:0;
+  right:0;
+  text-align:center;
+}
 .style-gradient-text{
   color: #2173b9;
   background-image: -webkit-linear-gradient(left, #1ad5ff , #2173b9); /* For Chrome and Safari */

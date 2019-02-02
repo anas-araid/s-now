@@ -65,18 +65,24 @@
         <section class="stile-parent" style="min-height:500px">
           <div class="stile-child" style="text-align:center">
             <h3 class="style-gradient-text">Segnala e monitora le strade ghiacciate in modo facile e veloce...</h3>
-            <button id="btn-accedi" class="stile-bottone-generico stile-main" style="border:none;color:white;box-shadow: 0 13px 19px -6px #1ad5ff;transition: .5s;" onclick="location.href='login.php'">
-              ACCEDI
-            </button>
+            <div class="stile-arrow stile-bounce">
+              <i class="material-icons stile-azzurro-chiaro-text">keyboard_arrow_down</i>
+            </div>
           </div>
         </section>
         <section>
-          <div class="stile-parent" style="background:url(img/bg.jpg); width:100%;min-height:500px;background-repeat:no-repeat;background-size: cover;left:0;right:0;text-align:center">
-            <div class="stile-child" style="z-index:2000;opacity:0.2">
-              <input style="width:40%;height:30px;border-radius:20px;;color:white"></input>
+          <div class="stile-parent stile-indexMap">
+            <div class="stile-child" style="z-index:2000;text-align:center">
+              <h4 style="color:white">Inserisci la tua posizione</h4><br>
+              <input type="text" style="opacity:1;border-radius:20px;color:white;width:50%;height:40px;"></input>
+              <button id="button-position" type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--white ">
+               <i class="material-icons mdl-color-text--blue">person_pin_circle</i>
+              </button>
             </div>
           </div>
-
+          <br>
+          <br>
+          <br>
           <!-- SERVIZIO-->
           <div id="servizio" class="mdl-grid">
             <div class="mdl-card mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--middle mdl-shadow--4dp stile-card" style="border:none;border-radius:17px; box-shadow: 0 12px 19px -6px #2173b9;">
