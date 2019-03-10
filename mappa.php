@@ -1,3 +1,7 @@
+<?php
+  @ob_start();
+  session_start();
+?>
 <!doctype>
 <html>
   <head>
@@ -5,11 +9,9 @@
     include "include/header.html";
     include 'php/functions.php';
     include 'php/get_user_data.php';
-    session_start();
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     // error_reporting per togliere il notice quando non trova isLogged
     error_reporting(0);
-
     if ($_SESSION['isLogged']){
       // getUserData ritorna un array con tutte le info dell'utente
       $user = getUserData($_SESSION['email'], "php/db_connection.php");

@@ -1,3 +1,7 @@
+<?php
+  @ob_start();
+  session_start();
+?>
 <!doctype>
 <html>
   <head>
@@ -5,7 +9,6 @@
     include "include/header.html";
     include 'php/functions.php';
     include 'php/get_user_data.php';
-    session_start();
     // Controlla se la foto profilo esiste, altrimenti usa quella default
     $_SESSION['fotoProfilo'] = profilePicture($_SESSION['email'], $_SESSION['fotoProfilo']);
     // getUserData ritorna un array con tutte le info dell'utente
